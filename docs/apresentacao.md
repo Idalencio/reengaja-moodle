@@ -48,4 +48,4 @@ O banco guarda uma chave por curso, tarefa e aluno. Se o envio já terminou e es
 A falha é registrada e a mensagem volta para outra tentativa após o TTL. O limite é de três tentativas. Erros definitivos e mensagens inválidas vão para a fila de falhas.
 
 **O que falta?**
-Rodar o Compose no destino e registrar o retorno do parceiro e o ambiente definitivo. Depois, preparar os links e documentos da entrega final.
+Publicar o vídeo no YouTube, registrar o retorno real do parceiro e concluir os relatos individuais. O repositório já é público e o Docker foi aprovado em 19/11 no GitHub Actions. O uso na instituição ainda exige confirmar seu ambiente e repetir o aceite no destino.

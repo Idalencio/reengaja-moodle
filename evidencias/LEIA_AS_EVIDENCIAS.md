@@ -28,3 +28,7 @@ O script scripts/integration.py usa conexões HTTP, AMQP e SMTP reais contra o a
 Em 06/11/2026, das 15:24 às 15:27, cinco cenários adicionais passaram no Moodle 5.3 da demonstração oficial. O fluxo incluiu leitura REST, publicação AMQP, consumo, SMTP e auditoria. Dois e-mails foram capturados. Ver moodle_real_fluxo.json, moodle_real_fluxo.log e moodle_real_email_*.eml. Os tokens não fazem parte do pacote.
 
 O ensaio com Moodle real foi preservado e não é uma execução nova de 16/11. A configuração Docker foi novamente validada, mas a criação do socket do daemon foi bloqueada pelo ambiente. O workflow e scripts/verificar_containers.py estão preparados para produzir a evidência de execução dos contêineres quando essa etapa for realizada.
+
+## Execução Docker de 19/11/2026
+
+O GitHub Actions aprovou os dois serviços em contêineres, o envio para Ana e Carla, o bloqueio de repetição e a persistência após reiniciar o consumidor. Na mesma execução passaram 104 testes e nove cenários de integração. A execução completa está em https://github.com/Idalencio/reengaja-moodle/actions/runs/44545022348. O resumo ci_github.json e o arquivo github_actions_19_11.log preservam essa comprovação. O artefato registros-de-testes da execução inclui execucao_containers.json e os demais registros.

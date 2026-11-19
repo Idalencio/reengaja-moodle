@@ -16,12 +16,12 @@ SITUAÇÃO EM 19/11
 104 testes de unidade/componentes e 9 cenários de integração passaram novamente.
 O ensaio real do Moodle de 06/11 foi preservado e tem 5 cenários aprovados.
 Os serviços rodaram separadamente com RabbitMQ e Mailpit reais, em execução nativa.
-A configuração Compose foi validada. A execução Docker ainda precisa ser comprovada.
+Docker aprovado em 19/11: dois serviços prontos, envio correto e histórico preservado após reinício.
 Os 104 testes passaram novamente em 19/11, com 94% de cobertura.
 Repositório público: https://github.com/Idalencio/reengaja-moodle
-Execução Docker e registros: https://github.com/Idalencio/reengaja-moodle/actions
+Execução Docker aprovada: https://github.com/Idalencio/reengaja-moodle/actions/runs/44545022348
 
 ANTES DE SUBMETER
 Publique o vídeo no YouTube e registre o link em EQUIPE.md.
-Execute a verificação Docker, registre o retorno real do parceiro e complete os relatos individuais.
+Registre o retorno real do parceiro e complete os relatos individuais.
 As bases dos relatos estão em preparacao_extensao/ e precisam da participação de cada pessoa.

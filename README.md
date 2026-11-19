@@ -121,7 +121,7 @@ O cliente foi testado com o Moodle 5.3 da demonstração oficial: cinco cenário
 
 O [guia do Moodle](docs/moodle_real.md) descreve como configurar outra instalação. O ambiente definitivo deve ser confirmado com o parceiro.
 
-Em 16/11, 104 testes de unidade/componentes e nove cenários de integração passaram novamente. Os serviços também rodaram em processos separados e o reinício do consumidor preservou o histórico. O Compose passou pela validação de configuração. O ambiente de revisão impediu a inicialização do Docker, portanto a execução dos contêineres continua sem comprovação.
+Em 19/11, o GitHub Actions aprovou a execução com Docker: os dois microsserviços ficaram prontos, Ana e Carla receberam os lembretes e Bruno não recebeu. O reprocessamento e o reinício do consumidor preservaram o total de e-mails. Os 104 testes de unidade/componentes e os nove cenários de integração também passaram em contêineres, sem falhas.
 
 Para conferir os contêineres em uma demonstração nova, com Python 3 instalado no computador:
 
@@ -133,9 +133,9 @@ docker compose run --build --rm testes
 
 O workflow repete essas etapas sem exigir Python no computador da equipe. O arquivo `test-results/execucao_containers.json` só é gerado depois de todas as verificações passarem.
 
-O repositório público está em https://github.com/Idalencio/reengaja-moodle. A execução Docker é verificada pelo GitHub Actions; o resultado e os registros ficam na aba Actions. Os 104 testes unitários também passaram na revisão de 19/11.
+Execução aprovada: https://github.com/Idalencio/reengaja-moodle/actions/runs/44545022348. O artefato `registros-de-testes` contém os logs, `execucao_containers.json`, resultados unitários e evidências da integração. A cópia dos logs e o resumo da execução estão em `evidencias/github_actions_19_11.log` e `evidencias/ci_github.json`. Os 104 testes também passaram localmente em 19/11, com 94% de cobertura.
 
-Para a entrega de 20/11, ficam a confirmação do resultado Docker, a publicação do vídeo, o registro do retorno real do parceiro e a conclusão dos relatos individuais. As quatro bases nomeadas estão em `preparacao_extensao/`.
+Para a entrega de 20/11, ficam a publicação do vídeo, o registro do retorno real do parceiro e a conclusão dos relatos individuais. As quatro bases nomeadas estão em `preparacao_extensao/`.
 
 ## Material da equipe
 

@@ -13,7 +13,7 @@ O sistema acompanha tarefas individuais do Moodle e envia um lembrete por e-mail
 
 A apresentação explica a consulta REST, a seleção das pendências, o envio SMTP, o histórico de processamento e as novas tentativas após falha. As evidências distinguem o ensaio local com origem simulada do ensaio histórico com Moodle real.
 
-Após publicar os fontes, incluir aqui o endereço real do repositório.
+Código-fonte e documentação: https://github.com/Idalencio/reengaja-moodle
 
 ## Antes de compartilhar
 

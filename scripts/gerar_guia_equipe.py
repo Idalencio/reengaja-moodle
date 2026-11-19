@@ -63,9 +63,8 @@ text('Código dos dois serviços, regras de seleção, RabbitMQ, SMTP, históric
 text('O que precisa ser fechado','head')
 table(['Item','Conferência'],[
  ['Moodle','Conferir o registro do ensaio real e repetir o fluxo na instalação adotada pelo parceiro.'],
- ['Contêineres','Executar o Compose e os testes; guardar a saída, o estado dos serviços e os logs.'],
  ['Parceiro','Registrar data, participantes, observações e mudanças decorrentes da validação.'],
- ['Publicação','Informar os links públicos do GitHub e do vídeo no YouTube.'],
+ ['Publicação','Publicar o vídeo no YouTube e registrar seu link. O código já está no GitHub.'],
  ['Equipe','Preencher quatro nomes, matrículas e contribuições em EQUIPE.md.'],
  ['Extensão','Concluir um relatório individual por integrante, com sua participação e aprendizagem.'],
 ],[.24*cw,.76*cw])
@@ -76,7 +75,7 @@ table(['Parte','Arquivos para revisar'],[
  ['3. Envio e falhas','notificacoes/, infra/broker.py e os e-mails EML'],
  ['4. Testes e execução','tests/, compose.yaml e evidencias/'],
 ],[.32*cw,.68*cw])
-text('Os nomes das pessoas não foram informados. Esta divisão organiza as falas e as revisões; as contribuições realizadas devem ser preenchidas pela equipe.','small')
+text('Equipe: Lucas Gallesio, Pedro Idalencio, Artur Thomé e Vitor Hugo. A divisão organiza as falas e as revisões; cada integrante deve registrar as contribuições que realizou.','small')
 text('Os relatos individuais podem usar docs/extensao_individual.md como ponto de partida. O retorno do parceiro deve ser registrado em docs/validacao_parceiro.md.','small')
 
 

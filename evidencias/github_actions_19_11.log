@@ -1,0 +1,661 @@
+﻿2026-11-19T14:33:28.2801581Z Current runner version: '2.338.2'
+2026-11-19T14:33:28.2838653Z ##[group]Runner Image Provisioner
+2026-11-19T14:33:28.2840040Z Hosted Compute Agent
+2026-11-19T14:33:28.2841190Z Version: 20261111.635
+2026-11-19T14:33:28.2842550Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+2026-11-19T14:33:28.2843940Z Build Date: 2026-11-11T01:49:01Z
+2026-11-19T14:33:28.2845234Z Worker ID: {f6029f1f-e368-4d11-8805-58f33cfca08e}
+2026-11-19T14:33:28.2846497Z Region: eastus2
+2026-11-19T14:33:28.2847521Z Cloud: Azure
+2026-11-19T14:33:28.2848482Z ##[endgroup]
+2026-11-19T14:33:28.2850976Z ##[group]Operating System
+2026-11-19T14:33:28.2852449Z Ubuntu
+2026-11-19T14:33:28.2853362Z 26.04.1
+2026-11-19T14:33:28.2854416Z LTS
+2026-11-19T14:33:28.2855334Z ##[endgroup]
+2026-11-19T14:33:28.2856426Z ##[group]Runner Image
+2026-11-19T14:33:28.2857604Z Image: ubuntu-26.04
+2026-11-19T14:33:28.2858593Z Version: 20261116.202.1
+2026-11-19T14:33:28.2860897Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261116.202/images/ubuntu/Ubuntu2604-Readme.md
+2026-11-19T14:33:28.2864821Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261116.202
+2026-11-19T14:33:28.2866604Z ##[endgroup]
+2026-11-19T14:33:28.2868828Z ##[group]GITHUB_TOKEN Permissions
+2026-11-19T14:33:28.2872374Z Contents: read
+2026-11-19T14:33:28.2873468Z Metadata: read
+2026-11-19T14:33:28.2874516Z Packages: read
+2026-11-19T14:33:28.2875600Z ##[endgroup]
+2026-11-19T14:33:28.2878953Z Secret source: Actions
+2026-11-19T14:33:28.2880631Z Cache mode: write
+2026-11-19T14:33:28.2882353Z Prepare workflow directory
+2026-11-19T14:33:28.3396806Z Prepare all required actions
+2026-11-19T14:33:28.3451330Z Getting action download info
+2026-11-19T14:33:28.5826583Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-19T14:33:28.6873850Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-11-19T14:33:28.8794252Z Complete job name: acceptance
+2026-11-19T14:33:28.9702455Z ##[group]Run actions/checkout@v4
+2026-11-19T14:33:28.9703398Z with:
+2026-11-19T14:33:28.9703873Z   repository: Idalencio/reengaja-moodle
+2026-11-19T14:33:28.9707782Z   token: ***
+2026-11-19T14:33:28.9708240Z   ssh-strict: true
+2026-11-19T14:33:28.9708700Z   ssh-user: git
+2026-11-19T14:33:28.9709161Z   persist-credentials: true
+2026-11-19T14:33:28.9709673Z   clean: true
+2026-11-19T14:33:28.9710142Z   sparse-checkout-cone-mode: true
+2026-11-19T14:33:28.9710686Z   fetch-depth: 1
+2026-11-19T14:33:28.9711135Z   fetch-tags: false
+2026-11-19T14:33:28.9711604Z   show-progress: true
+2026-11-19T14:33:28.9712214Z   lfs: false
+2026-11-19T14:33:28.9712660Z   submodules: false
+2026-11-19T14:33:28.9713134Z   set-safe-directory: true
+2026-11-19T14:33:28.9713660Z   allow-unsafe-pr-checkout: false
+2026-11-19T14:33:28.9714449Z ##[endgroup]
+2026-11-19T14:33:29.2417768Z Syncing repository: Idalencio/reengaja-moodle
+2026-11-19T14:33:29.2421308Z ##[group]Getting Git version info
+2026-11-19T14:33:29.2423623Z Working directory is '/home/runner/work/reengaja-moodle/reengaja-moodle'
+2026-11-19T14:33:29.2426138Z [command]/usr/bin/git version
+2026-11-19T14:33:29.2427295Z git version 2.56.1
+2026-11-19T14:33:29.2461240Z ##[endgroup]
+2026-11-19T14:33:29.2477012Z Temporarily overriding HOME='/home/runner/work/_temp/22b39350-a371-43cd-8d27-066e51fe8363' before making global git config changes
+2026-11-19T14:33:29.2479582Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-19T14:33:29.2482970Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/reengaja-moodle/reengaja-moodle
+2026-11-19T14:33:29.2561517Z Deleting the contents of '/home/runner/work/reengaja-moodle/reengaja-moodle'
+2026-11-19T14:33:29.2565540Z ##[group]Initializing the repository
+2026-11-19T14:33:29.2572170Z [command]/usr/bin/git init /home/runner/work/reengaja-moodle/reengaja-moodle
+2026-11-19T14:33:29.2686636Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-19T14:33:29.2688553Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-19T14:33:29.2689672Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-19T14:33:29.2690829Z hint: call:
+2026-11-19T14:33:29.2691357Z hint:
+2026-11-19T14:33:29.2692267Z hint: 	git config --global init.defaultBranch <name>
+2026-11-19T14:33:29.2693011Z hint:
+2026-11-19T14:33:29.2693957Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-19T14:33:29.2695020Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-19T14:33:29.2695863Z hint:
+2026-11-19T14:33:29.2696638Z hint: 	git branch -m <name>
+2026-11-19T14:33:29.2697658Z hint:
+2026-11-19T14:33:29.2698876Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-19T14:33:29.2702020Z Initialized empty Git repository in /home/runner/work/reengaja-moodle/reengaja-moodle/.git/
+2026-11-19T14:33:29.2712642Z [command]/usr/bin/git remote add origin https://github.com/Idalencio/reengaja-moodle
+2026-11-19T14:33:29.2775347Z ##[endgroup]
+2026-11-19T14:33:29.2777601Z ##[group]Disabling automatic garbage collection
+2026-11-19T14:33:29.2784615Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-19T14:33:29.2833737Z ##[endgroup]
+2026-11-19T14:33:29.2835740Z ##[group]Setting up auth
+2026-11-19T14:33:29.2841525Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-19T14:33:29.2898310Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-19T14:33:29.3486632Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-19T14:33:29.3530012Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-19T14:33:29.3817784Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-19T14:33:29.3860944Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-19T14:33:29.4165735Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-19T14:33:29.4218218Z ##[endgroup]
+2026-11-19T14:33:29.4220260Z ##[group]Fetching the repository
+2026-11-19T14:33:29.4230962Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +648bf7a27506c9fba455376af448807f2b580a32:refs/remotes/origin/main
+2026-11-19T14:33:29.6700734Z From https://github.com/Idalencio/reengaja-moodle
+2026-11-19T14:33:29.6703316Z  * [new ref]         648bf7a27506c9fba455376af448807f2b580a32 -> origin/main
+2026-11-19T14:33:29.6707214Z ##[endgroup]
+2026-11-19T14:33:29.6708183Z ##[group]Determining the checkout info
+2026-11-19T14:33:29.6710071Z ##[endgroup]
+2026-11-19T14:33:29.6716445Z [command]/usr/bin/git sparse-checkout disable
+2026-11-19T14:33:29.6771082Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-19T14:33:29.6802797Z ##[group]Checking out the ref
+2026-11-19T14:33:29.6808632Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-11-19T14:33:29.6926218Z Switched to a new branch 'main'
+2026-11-19T14:33:29.6932164Z branch 'main' set up to track 'origin/main'.
+2026-11-19T14:33:29.6938795Z ##[endgroup]
+2026-11-19T14:33:29.6986579Z [command]/usr/bin/git log -1 --format=%H
+2026-11-19T14:33:29.7014133Z 648bf7a27506c9fba455376af448807f2b580a32
+2026-11-19T14:33:29.7262663Z ##[group]Run docker compose up -d --build --wait --wait-timeout 180
+2026-11-19T14:33:29.7263801Z [36;1mdocker compose up -d --build --wait --wait-timeout 180[0m
+2026-11-19T14:33:29.7302146Z shell: /usr/bin/bash -e {0}
+2026-11-19T14:33:29.7302779Z ##[endgroup]
+2026-11-19T14:33:29.9525915Z  Image axllent/mailpit:v1.27.4 Pulling 
+2026-11-19T14:33:29.9527523Z  Image rabbitmq:4.1-management Pulling 
+2026-11-19T14:33:30.4019966Z  440602757c68 Pulling fs layer 0B
+2026-11-19T14:33:30.4022305Z  e44c0ac2ca0a Pulling fs layer 0B
+2026-11-19T14:33:30.4024059Z  9824c27679d3 Pulling fs layer 0B
+2026-11-19T14:33:30.4164372Z  4a74b505cb21 Pulling fs layer 0B
+2026-11-19T14:33:30.4170347Z  2ea82e5fdc12 Pulling fs layer 0B
+2026-11-19T14:33:30.4172285Z  4a117d8c920f Pulling fs layer 0B
+2026-11-19T14:33:30.4174259Z  d677bb683056 Pulling fs layer 0B
+2026-11-19T14:33:30.4176061Z  59ab1d612c78 Pulling fs layer 0B
+2026-11-19T14:33:30.4177700Z  6ee30b8c72ae Pulling fs layer 0B
+2026-11-19T14:33:30.4179444Z  d1c228c0ef8c Pulling fs layer 0B
+2026-11-19T14:33:30.4180751Z  497f9647b571 Pulling fs layer 0B
+2026-11-19T14:33:30.4182233Z  8888b1ee6d96 Pulling fs layer 0B
+2026-11-19T14:33:30.4183845Z  02cbf54d3e35 Pulling fs layer 0B
+2026-11-19T14:33:30.5560894Z  e44c0ac2ca0a Downloading 7.34MB
+2026-11-19T14:33:30.5566548Z  7b31c9e20edc Downloading 9.828kB
+2026-11-19T14:33:30.5569823Z  6ee30b8c72ae Download complete 0B
+2026-11-19T14:33:30.5579066Z  440602757c68 Download complete 0B
+2026-11-19T14:33:30.5587388Z  497f9647b571 Download complete 0B
+2026-11-19T14:33:30.5613287Z  8888b1ee6d96 Download complete 0B
+2026-11-19T14:33:30.5615610Z  9824c27679d3 Download complete 0B
+2026-11-19T14:33:30.5675753Z  02cbf54d3e35 Download complete 0B
+2026-11-19T14:33:30.5691352Z  2ea82e5fdc12 Download complete 0B
+2026-11-19T14:33:30.5694073Z  d677bb683056 Downloading 4.194MB
+2026-11-19T14:33:30.5706905Z  59ab1d612c78 Download complete 0B
+2026-11-19T14:33:30.5709575Z  d1c228c0ef8c Downloading 4.194MB
+2026-11-19T14:33:30.5712016Z  e51dec9ce065 Download complete 0B
+2026-11-19T14:33:30.5714911Z  4a74b505cb21 Downloading 9.437MB
+2026-11-19T14:33:30.5717212Z  9824c27679d3 Extracting 1B
+2026-11-19T14:33:30.5729171Z  4a117d8c920f Download complete 0B
+2026-11-19T14:33:30.6563750Z  d1c228c0ef8c Download complete 0B
+2026-11-19T14:33:30.6567432Z  4a74b505cb21 Downloading 22.02MB
+2026-11-19T14:33:30.6570430Z  47b8be8c7e04 Download complete 0B
+2026-11-19T14:33:30.6573360Z  d677bb683056 Downloading 19.92MB
+2026-11-19T14:33:30.6575876Z  e44c0ac2ca0a Download complete 0B
+2026-11-19T14:33:30.6578477Z  7b31c9e20edc Download complete 0B
+2026-11-19T14:33:30.6646625Z  9824c27679d3 Extracting 1B
+2026-11-19T14:33:30.7563641Z  d677bb683056 Download complete 0B
+2026-11-19T14:33:30.7567406Z  4a74b505cb21 Downloading 46.37MB
+2026-11-19T14:33:30.7577397Z  9824c27679d3 Pull complete 0B
+2026-11-19T14:33:30.7608740Z  e44c0ac2ca0a Extracting 1B
+2026-11-19T14:33:30.8578285Z  4a74b505cb21 Download complete 0B
+2026-11-19T14:33:30.8595940Z  e44c0ac2ca0a Extracting 1B
+2026-11-19T14:33:30.8773713Z  4a74b505cb21 Extracting 1B
+2026-11-19T14:33:30.9594842Z  440602757c68 Extracting 1B
+2026-11-19T14:33:30.9622918Z  e44c0ac2ca0a Pull complete 0B
+2026-11-19T14:33:30.9853341Z  4a74b505cb21 Extracting 1B
+2026-11-19T14:33:31.0414266Z  440602757c68 Pull complete 0B
+2026-11-19T14:33:31.0428396Z  Image axllent/mailpit:v1.27.4 Pulled 
+2026-11-19T14:33:31.0771328Z  4a74b505cb21 Extracting 1B
+2026-11-19T14:33:31.1682910Z  4a74b505cb21 Extracting 1B
+2026-11-19T14:33:31.2696056Z  4a74b505cb21 Extracting 1B
+2026-11-19T14:33:31.3709636Z  4a74b505cb21 Extracting 1B
+2026-11-19T14:33:31.4672121Z  d1c228c0ef8c Extracting 1B
+2026-11-19T14:33:31.4712728Z  4a74b505cb21 Pull complete 0B
+2026-11-19T14:33:31.5621155Z  2ea82e5fdc12 Pull complete 0B
+2026-11-19T14:33:31.5660889Z  d1c228c0ef8c Pull complete 0B
+2026-11-19T14:33:31.5679610Z  d677bb683056 Extracting 1B
+2026-11-19T14:33:31.6653907Z  d677bb683056 Extracting 1B
+2026-11-19T14:33:31.7653234Z  d677bb683056 Extracting 1B
+2026-11-19T14:33:31.8646640Z  d677bb683056 Extracting 1B
+2026-11-19T14:33:31.9647304Z  d677bb683056 Extracting 1B
+2026-11-19T14:33:32.0555964Z  6ee30b8c72ae Pull complete 0B
+2026-11-19T14:33:32.0564384Z  497f9647b571 Pull complete 0B
+2026-11-19T14:33:32.0586105Z  8888b1ee6d96 Pull complete 0B
+2026-11-19T14:33:32.0606901Z  02cbf54d3e35 Pull complete 0B
+2026-11-19T14:33:32.0620285Z  59ab1d612c78 Pull complete 0B
+2026-11-19T14:33:32.0634085Z  4a117d8c920f Extracting 1B
+2026-11-19T14:33:32.0647176Z  d677bb683056 Pull complete 0B
+2026-11-19T14:33:32.1425605Z  4a117d8c920f Pull complete 0B
+2026-11-19T14:33:32.1436309Z  Image rabbitmq:4.1-management Pulled 
+2026-11-19T14:33:32.3401945Z  Image reengaja-moodle-moodle-demo Building 
+2026-11-19T14:33:32.4266563Z  Image reengaja-moodle-acompanhamento Building 
+2026-11-19T14:33:32.4267623Z  Image reengaja-moodle-notificacoes Building 
+2026-11-19T14:33:32.4268226Z #1 [internal] load local bake definitions
+2026-11-19T14:33:32.5281898Z #1 reading from stdin 1.63kB done
+2026-11-19T14:33:32.5282759Z #1 DONE 0.0s
+2026-11-19T14:33:32.5283141Z 
+2026-11-19T14:33:32.5439519Z #2 [moodle-demo internal] load build definition from Dockerfile
+2026-11-19T14:33:32.5440236Z #2 transferring dockerfile: 161B done
+2026-11-19T14:33:32.5440826Z #2 DONE 0.0s
+2026-11-19T14:33:32.5441243Z 
+2026-11-19T14:33:32.5441614Z #3 [notificacoes internal] load build definition from Dockerfile
+2026-11-19T14:33:32.5442599Z #3 transferring dockerfile: 358B done
+2026-11-19T14:33:32.7161747Z #3 DONE 0.0s
+2026-11-19T14:33:32.7162261Z 
+2026-11-19T14:33:32.7162630Z #4 [acompanhamento internal] load build definition from Dockerfile
+2026-11-19T14:33:32.7163200Z #4 transferring dockerfile: 322B done
+2026-11-19T14:33:32.7163574Z #4 DONE 0.0s
+2026-11-19T14:33:32.7163735Z 
+2026-11-19T14:33:32.7163969Z #5 [auth] library/python:pull token for registry-1.docker.io
+2026-11-19T14:33:32.7164432Z #5 DONE 0.0s
+2026-11-19T14:33:32.7164585Z 
+2026-11-19T14:33:32.7164925Z #6 [acompanhamento internal] load metadata for docker.io/library/python:3.12-slim
+2026-11-19T14:33:33.0627174Z #6 DONE 0.4s
+2026-11-19T14:33:33.0628182Z 
+2026-11-19T14:33:33.0628422Z #7 [moodle-demo internal] load .dockerignore
+2026-11-19T14:33:33.0628947Z #7 transferring context: 161B done
+2026-11-19T14:33:33.0629371Z #7 DONE 0.0s
+2026-11-19T14:33:33.0629517Z 
+2026-11-19T14:33:33.0629642Z #8 [moodle-demo internal] load build context
+2026-11-19T14:33:33.0630307Z #8 transferring context: 4.89kB done
+2026-11-19T14:33:33.0630746Z #8 DONE 0.0s
+2026-11-19T14:33:33.0630939Z 
+2026-11-19T14:33:33.0631133Z #9 [notificacoes internal] load build context
+2026-11-19T14:33:33.0631661Z #9 transferring context: 20.75kB done
+2026-11-19T14:33:33.0632474Z #9 DONE 0.0s
+2026-11-19T14:33:33.0632679Z 
+2026-11-19T14:33:33.0632891Z #10 [acompanhamento internal] load build context
+2026-11-19T14:33:33.0633472Z #10 transferring context: 21.16kB done
+2026-11-19T14:33:33.0633951Z #10 DONE 0.0s
+2026-11-19T14:33:33.0634184Z 
+2026-11-19T14:33:33.0634785Z #11 [notificacoes 1/3] FROM docker.io/library/python:3.12-slim@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b
+2026-11-19T14:33:33.0636051Z #11 resolve docker.io/library/python:3.12-slim@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b 0.0s done
+2026-11-19T14:33:33.0637332Z #11 sha256:05e0eee5572e9c9f50408a2132590133b830a668a1cf2ff2b150f19c57707e2b 248B / 248B 0.0s done
+2026-11-19T14:33:33.0638567Z #11 sha256:68bced9e0afa4479df17c3646e27c7c7e9ce9ba70c0e6c73b6826487b89037d9 1.29MB / 1.29MB 0.1s done
+2026-11-19T14:33:33.2399221Z #11 sha256:68bced9e0afa4479df17c3646e27c7c7e9ce9ba70c0e6c73b6826487b89037d9 1.29MB / 1.29MB 0.1s done
+2026-11-19T14:33:33.2400177Z #11 sha256:2dc99d2d0a39fce31e37615eb4c932e16dcc4c2b0ce9993714280081b5dbe085 12.12MB / 12.12MB 0.2s done
+2026-11-19T14:33:33.2400888Z #11 sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41 3.15MB / 29.86MB 0.2s
+2026-11-19T14:33:33.4510300Z #11 sha256:2dc99d2d0a39fce31e37615eb4c932e16dcc4c2b0ce9993714280081b5dbe085 12.12MB / 12.12MB 0.2s done
+2026-11-19T14:33:33.4511726Z #11 sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41 7.34MB / 29.86MB 0.3s
+2026-11-19T14:33:33.4512970Z #11 sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41 11.53MB / 29.86MB 0.5s
+2026-11-19T14:33:33.6007686Z #11 sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41 16.78MB / 29.86MB 0.6s
+2026-11-19T14:33:33.7503167Z #11 sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41 20.97MB / 29.86MB 0.8s
+2026-11-19T14:33:33.9014116Z #11 sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41 25.17MB / 29.86MB 0.9s
+2026-11-19T14:33:34.0466082Z #11 sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41 29.86MB / 29.86MB 1.0s done
+2026-11-19T14:33:34.2003657Z #11 sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41 29.86MB / 29.86MB 1.0s done
+2026-11-19T14:33:34.2005136Z #11 extracting sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41
+2026-11-19T14:33:34.7118088Z #11 extracting sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41 0.7s done
+2026-11-19T14:33:34.9326976Z #11 extracting sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41 0.7s done
+2026-11-19T14:33:34.9328207Z #11 extracting sha256:68bced9e0afa4479df17c3646e27c7c7e9ce9ba70c0e6c73b6826487b89037d9 0.1s done
+2026-11-19T14:33:34.9329367Z #11 extracting sha256:2dc99d2d0a39fce31e37615eb4c932e16dcc4c2b0ce9993714280081b5dbe085
+2026-11-19T14:33:35.1250872Z #11 extracting sha256:2dc99d2d0a39fce31e37615eb4c932e16dcc4c2b0ce9993714280081b5dbe085 0.3s done
+2026-11-19T14:33:35.2827426Z #11 extracting sha256:2dc99d2d0a39fce31e37615eb4c932e16dcc4c2b0ce9993714280081b5dbe085 0.3s done
+2026-11-19T14:33:35.2828701Z #11 extracting sha256:05e0eee5572e9c9f50408a2132590133b830a668a1cf2ff2b150f19c57707e2b done
+2026-11-19T14:33:35.2829450Z #11 DONE 2.2s
+2026-11-19T14:33:35.2829641Z 
+2026-11-19T14:33:35.2829819Z #12 [notificacoes 2/3] WORKDIR /app
+2026-11-19T14:33:35.8398087Z #12 DONE 0.6s
+2026-11-19T14:33:35.8399010Z 
+2026-11-19T14:33:35.8399888Z #13 [notificacoes 3/6] COPY requirements.txt .
+2026-11-19T14:33:35.8412269Z #13 DONE 0.0s
+2026-11-19T14:33:35.8413292Z 
+2026-11-19T14:33:35.8414272Z #14 [acompanhamento 3/6] COPY requirements.txt .
+2026-11-19T14:33:35.8415867Z #14 CACHED
+2026-11-19T14:33:35.8416638Z 
+2026-11-19T14:33:35.8417039Z #15 [moodle-demo 3/3] COPY demo ./demo
+2026-11-19T14:33:35.8418730Z #15 DONE 0.0s
+2026-11-19T14:33:35.8419497Z 
+2026-11-19T14:33:35.8420218Z #16 [moodle-demo] exporting to image
+2026-11-19T14:33:35.8421312Z #16 exporting layers 0.1s done
+2026-11-19T14:33:35.8423110Z #16 exporting manifest sha256:6852cd71c4e8849e74bbe9294ad4c594d5b93c788dc7146ea56fe7526c90d883 done
+2026-11-19T14:33:35.8425496Z #16 exporting config sha256:f2db974519b525767514b06b2133f9d2c4a06093aa5c1eda425a44470854eecd 0.0s done
+2026-11-19T14:33:35.9887169Z #16 exporting attestation manifest sha256:65d81894fa405cf333037d0a50ca69c303f26bb0524af0c41928a1ad123ff885 0.0s done
+2026-11-19T14:33:35.9888633Z #16 exporting manifest list sha256:56528b8586f6e7f1c0e847e8baf5d2c86e54e8d64cc091de352641e06832b7f4 done
+2026-11-19T14:33:35.9889695Z #16 naming to docker.io/library/reengaja-moodle-moodle-demo:latest done
+2026-11-19T14:33:35.9890587Z #16 unpacking to docker.io/library/reengaja-moodle-moodle-demo:latest 0.0s done
+2026-11-19T14:33:35.9891263Z #16 DONE 0.2s
+2026-11-19T14:33:35.9891446Z 
+2026-11-19T14:33:35.9891701Z #17 [moodle-demo] resolving provenance for metadata file
+2026-11-19T14:33:36.1476108Z #17 DONE 0.0s
+2026-11-19T14:33:36.1476387Z 
+2026-11-19T14:33:36.1476815Z #18 [acompanhamento 4/6] RUN pip install --no-cache-dir -r requirements.txt
+2026-11-19T14:33:37.3756963Z #18 1.498 Collecting pika==1.3.2 (from -r requirements.txt (line 1))
+2026-11-19T14:33:37.3758112Z #18 1.533   Downloading pika-1.3.2-py3-none-any.whl.metadata (13 kB)
+2026-11-19T14:33:37.3759368Z #18 1.544 Downloading pika-1.3.2-py3-none-any.whl (155 kB)
+2026-11-19T14:33:37.3760142Z #18 1.562 Installing collected packages: pika
+2026-11-19T14:33:37.4836888Z #18 1.649 Successfully installed pika-1.3.2
+2026-11-19T14:33:37.4840390Z #18 1.650 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+2026-11-19T14:33:37.4843504Z #18 1.745 
+2026-11-19T14:33:37.4844221Z #18 1.745 [notice] A new release of pip is available: 25.0.1 -> 26.3
+2026-11-19T14:33:37.4845002Z #18 1.745 [notice] To update, run: pip install --upgrade pip
+2026-11-19T14:33:37.5867440Z #18 DONE 1.8s
+2026-11-19T14:33:37.5867763Z 
+2026-11-19T14:33:37.5868391Z #19 [notificacoes 4/6] RUN pip install --no-cache-dir -r requirements.txt && mkdir /data && chown 10001:10001 /data
+2026-11-19T14:33:37.5869407Z #19 1.491 Collecting pika==1.3.2 (from -r requirements.txt (line 1))
+2026-11-19T14:33:37.5870177Z #19 1.521   Downloading pika-1.3.2-py3-none-any.whl.metadata (13 kB)
+2026-11-19T14:33:37.5870883Z #19 1.532 Downloading pika-1.3.2-py3-none-any.whl (155 kB)
+2026-11-19T14:33:37.5871433Z #19 1.550 Installing collected packages: pika
+2026-11-19T14:33:37.5875780Z #19 1.637 Successfully installed pika-1.3.2
+2026-11-19T14:33:37.5878307Z #19 1.638 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+2026-11-19T14:33:37.5910134Z #19 1.718 
+2026-11-19T14:33:37.5910465Z #19 1.718 [notice] A new release of pip is available: 25.0.1 -> 26.3
+2026-11-19T14:33:37.5910921Z #19 1.718 [notice] To update, run: pip install --upgrade pip
+2026-11-19T14:33:37.5911267Z #19 DONE 1.8s
+2026-11-19T14:33:37.5911382Z 
+2026-11-19T14:33:37.5911513Z #20 [notificacoes 5/6] COPY infra ./infra
+2026-11-19T14:33:37.5912019Z #20 DONE 0.0s
+2026-11-19T14:33:37.5912225Z 
+2026-11-19T14:33:37.5912406Z #21 [acompanhamento 5/6] COPY infra ./infra
+2026-11-19T14:33:37.7373248Z #21 DONE 0.0s
+2026-11-19T14:33:37.7374316Z 
+2026-11-19T14:33:37.7375099Z #22 [notificacoes 6/6] COPY notificacoes ./notificacoes
+2026-11-19T14:33:37.7378013Z #22 DONE 0.0s
+2026-11-19T14:33:37.7378597Z 
+2026-11-19T14:33:37.7379136Z #23 [acompanhamento 6/6] COPY acompanhamento ./acompanhamento
+2026-11-19T14:33:37.7380036Z #23 DONE 0.0s
+2026-11-19T14:33:37.7380459Z 
+2026-11-19T14:33:37.7380751Z #24 [acompanhamento] exporting to image
+2026-11-19T14:33:37.7381449Z #24 exporting layers 0.1s done
+2026-11-19T14:33:37.8467847Z #24 ...
+2026-11-19T14:33:37.8468406Z 
+2026-11-19T14:33:37.8468830Z #25 [notificacoes] exporting to image
+2026-11-19T14:33:37.8470102Z #25 exporting layers 0.1s done
+2026-11-19T14:33:37.8471093Z #25 exporting manifest sha256:de5814ba40cc0e3be31d9279f00ebe2e36b4f207afa20df53380c9d4223a1ba0 done
+2026-11-19T14:33:37.8472482Z #25 exporting config sha256:68e2895988294cb0607110c34c578a179792956f01effaa7146d1eeb99c77b7d done
+2026-11-19T14:33:37.8473381Z #25 exporting attestation manifest sha256:79917d86dc4c37a115152207d8b1d82e74b570ca8897a54886f7b637e4d3c062 0.0s done
+2026-11-19T14:33:37.8474938Z #25 exporting manifest list sha256:20e5dd9b028842115e32f7595d54c424cb825146aba63c9462481aa252c0b47e done
+2026-11-19T14:33:37.8475960Z #25 naming to docker.io/library/reengaja-moodle-notificacoes:latest done
+2026-11-19T14:33:37.8476838Z #25 unpacking to docker.io/library/reengaja-moodle-notificacoes:latest 0.0s done
+2026-11-19T14:33:37.8477519Z #25 DONE 0.2s
+2026-11-19T14:33:37.8477692Z 
+2026-11-19T14:33:37.8477862Z #24 [acompanhamento] exporting to image
+2026-11-19T14:33:37.8478727Z #24 exporting manifest sha256:d8eddc5ea0268fd5aca82b3e4802c00abca5ca660c82f0b4de456670afc96c97 done
+2026-11-19T14:33:37.8480228Z #24 exporting config sha256:c4eb0261f5f6aa589bf0d92b835c2a7781234cc71e3ff4811dc3f49d0b3249f0 done
+2026-11-19T14:33:37.8481635Z #24 exporting attestation manifest sha256:24170a626bd872880aa322813a49d979fccd0c20dbf483d22f7617ed26c41ccb 0.0s done
+2026-11-19T14:33:37.8483191Z #24 exporting manifest list sha256:ce4b9a57b2612b56f82c9b7a1b0c403322ea4036980ddcccfea73fbdcebdb640 done
+2026-11-19T14:33:37.8484682Z #24 naming to docker.io/library/reengaja-moodle-acompanhamento:latest done
+2026-11-19T14:33:37.8485649Z #24 unpacking to docker.io/library/reengaja-moodle-acompanhamento:latest 0.1s done
+2026-11-19T14:33:37.9271616Z #24 DONE 0.2s
+2026-11-19T14:33:37.9272054Z 
+2026-11-19T14:33:37.9272323Z #26 [notificacoes] resolving provenance for metadata file
+2026-11-19T14:33:37.9272689Z #26 DONE 0.0s
+2026-11-19T14:33:37.9272814Z 
+2026-11-19T14:33:37.9272980Z #27 [acompanhamento] resolving provenance for metadata file
+2026-11-19T14:33:37.9273325Z #27 DONE 0.0s
+2026-11-19T14:33:37.9273768Z  Image reengaja-moodle-notificacoes Built 
+2026-11-19T14:33:37.9274335Z  Image reengaja-moodle-acompanhamento Built 
+2026-11-19T14:33:37.9274802Z  Image reengaja-moodle-moodle-demo Built 
+2026-11-19T14:33:37.9292656Z  Network reengaja-moodle_default Creating 
+2026-11-19T14:33:37.9587627Z  Network reengaja-moodle_default Created 
+2026-11-19T14:33:37.9592728Z  Volume reengaja-moodle_notification-data Creating 
+2026-11-19T14:33:37.9606653Z  Volume reengaja-moodle_notification-data Created 
+2026-11-19T14:33:37.9610716Z  Volume reengaja-moodle_rabbit-data Creating 
+2026-11-19T14:33:37.9619719Z  Volume reengaja-moodle_rabbit-data Created 
+2026-11-19T14:33:37.9623532Z  Volume reengaja-moodle_mailpit-data Creating 
+2026-11-19T14:33:37.9639052Z  Volume reengaja-moodle_mailpit-data Created 
+2026-11-19T14:33:37.9649693Z  Container reengaja-moodle-rabbitmq-1 Creating 
+2026-11-19T14:33:37.9650243Z  Container reengaja-moodle-moodle-demo-1 Creating 
+2026-11-19T14:33:37.9650646Z  Container reengaja-moodle-mailpit-1 Creating 
+2026-11-19T14:33:38.0152312Z  Container reengaja-moodle-mailpit-1 Created 
+2026-11-19T14:33:38.0153020Z  Container reengaja-moodle-moodle-demo-1 Created 
+2026-11-19T14:33:38.0185506Z  Container reengaja-moodle-rabbitmq-1 Created 
+2026-11-19T14:33:38.0186761Z  Container reengaja-moodle-acompanhamento-1 Creating 
+2026-11-19T14:33:38.0187766Z  Container reengaja-moodle-notificacoes-1 Creating 
+2026-11-19T14:33:38.0533075Z  Container reengaja-moodle-acompanhamento-1 Created 
+2026-11-19T14:33:38.0543959Z  Container reengaja-moodle-notificacoes-1 Created 
+2026-11-19T14:33:38.0800403Z  Container reengaja-moodle-rabbitmq-1 Starting 
+2026-11-19T14:33:38.0801081Z  Container reengaja-moodle-moodle-demo-1 Starting 
+2026-11-19T14:33:38.0801685Z  Container reengaja-moodle-mailpit-1 Starting 
+2026-11-19T14:33:38.5533489Z  Container reengaja-moodle-rabbitmq-1 Started 
+2026-11-19T14:33:38.5812652Z  Container reengaja-moodle-moodle-demo-1 Started 
+2026-11-19T14:33:38.5813764Z  Container reengaja-moodle-rabbitmq-1 Waiting 
+2026-11-19T14:33:38.5814679Z  Container reengaja-moodle-moodle-demo-1 Waiting 
+2026-11-19T14:33:38.6261922Z  Container reengaja-moodle-mailpit-1 Started 
+2026-11-19T14:33:38.6263102Z  Container reengaja-moodle-rabbitmq-1 Waiting 
+2026-11-19T14:33:44.0824988Z  Container reengaja-moodle-moodle-demo-1 Healthy 
+2026-11-19T14:33:49.1276628Z  Container reengaja-moodle-rabbitmq-1 Healthy 
+2026-11-19T14:33:49.1277778Z  Container reengaja-moodle-notificacoes-1 Starting 
+2026-11-19T14:33:49.2911239Z  Container reengaja-moodle-notificacoes-1 Started 
+2026-11-19T14:33:49.5824391Z  Container reengaja-moodle-rabbitmq-1 Healthy 
+2026-11-19T14:33:49.5825436Z  Container reengaja-moodle-acompanhamento-1 Starting 
+2026-11-19T14:33:49.7353862Z  Container reengaja-moodle-acompanhamento-1 Started 
+2026-11-19T14:33:49.7354626Z  Container reengaja-moodle-rabbitmq-1 Waiting 
+2026-11-19T14:33:49.7355431Z  Container reengaja-moodle-mailpit-1 Waiting 
+2026-11-19T14:33:49.7356062Z  Container reengaja-moodle-moodle-demo-1 Waiting 
+2026-11-19T14:33:49.7356704Z  Container reengaja-moodle-acompanhamento-1 Waiting 
+2026-11-19T14:33:49.7357669Z  Container reengaja-moodle-notificacoes-1 Waiting 
+2026-11-19T14:33:50.2378720Z  Container reengaja-moodle-rabbitmq-1 Healthy 
+2026-11-19T14:33:50.2379464Z  Container reengaja-moodle-mailpit-1 Healthy 
+2026-11-19T14:33:50.2380169Z  Container reengaja-moodle-moodle-demo-1 Healthy 
+2026-11-19T14:33:55.2371943Z  Container reengaja-moodle-acompanhamento-1 Healthy 
+2026-11-19T14:34:04.7374084Z  Container reengaja-moodle-notificacoes-1 Healthy 
+2026-11-19T14:34:04.7464066Z ##[group]Run python3 scripts/verificar_containers.py
+2026-11-19T14:34:04.7464511Z [36;1mpython3 scripts/verificar_containers.py[0m
+2026-11-19T14:34:04.7499187Z shell: /usr/bin/bash -e {0}
+2026-11-19T14:34:04.7499452Z ##[endgroup]
+2026-11-19T14:34:04.8139213Z PASSOU: Dois microsserviços prontos
+2026-11-19T14:34:04.8172089Z PASSOU: Ana e Carla recebem, Bruno não recebe
+2026-11-19T14:34:05.7492561Z PASSOU: Reprocessamento não gera novos e-mails
+2026-11-19T14:34:05.8321495Z  Container reengaja-moodle-notificacoes-1 Restarting 
+2026-11-19T14:34:07.0759030Z  Container reengaja-moodle-notificacoes-1 Started 
+2026-11-19T14:34:08.4626129Z PASSOU: Volume preserva o histórico após reiniciar o consumidor
+2026-11-19T14:34:08.6178090Z ##[group]Run docker compose run --build --rm testes
+2026-11-19T14:34:08.6178537Z [36;1mdocker compose run --build --rm testes[0m
+2026-11-19T14:34:08.6211492Z shell: /usr/bin/bash -e {0}
+2026-11-19T14:34:08.6211972Z ##[endgroup]
+2026-11-19T14:34:08.7540013Z  Image reengaja-moodle-moodle-demo Building 
+2026-11-19T14:34:08.8042961Z #1 [internal] load local bake definitions
+2026-11-19T14:34:08.9993444Z #1 reading from stdin 591B done
+2026-11-19T14:34:08.9993920Z #1 DONE 0.0s
+2026-11-19T14:34:08.9994124Z 
+2026-11-19T14:34:08.9994343Z #2 [internal] load build definition from Dockerfile
+2026-11-19T14:34:08.9994914Z #2 transferring dockerfile: 161B done
+2026-11-19T14:34:08.9995360Z #2 DONE 0.0s
+2026-11-19T14:34:08.9995543Z 
+2026-11-19T14:34:08.9995843Z #3 [internal] load metadata for docker.io/library/python:3.12-slim
+2026-11-19T14:34:08.9996442Z #3 DONE 0.1s
+2026-11-19T14:34:09.1000861Z 
+2026-11-19T14:34:09.1001425Z #4 [internal] load .dockerignore
+2026-11-19T14:34:09.1002233Z #4 transferring context: 161B done
+2026-11-19T14:34:09.1003489Z #4 DONE 0.0s
+2026-11-19T14:34:09.1003852Z 
+2026-11-19T14:34:09.1004346Z #5 [internal] load build context
+2026-11-19T14:34:09.1005134Z #5 transferring context: 134B done
+2026-11-19T14:34:09.1005611Z #5 DONE 0.0s
+2026-11-19T14:34:09.1005932Z 
+2026-11-19T14:34:09.1006603Z #6 [1/3] FROM docker.io/library/python:3.12-slim@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b
+2026-11-19T14:34:09.1008134Z #6 resolve docker.io/library/python:3.12-slim@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b 0.0s done
+2026-11-19T14:34:09.1009793Z #6 DONE 0.0s
+2026-11-19T14:34:09.1010574Z 
+2026-11-19T14:34:09.1010923Z #7 [2/3] WORKDIR /app
+2026-11-19T14:34:09.1011330Z #7 CACHED
+2026-11-19T14:34:09.1011517Z 
+2026-11-19T14:34:09.1011661Z #8 [3/3] COPY demo ./demo
+2026-11-19T14:34:09.1012220Z #8 CACHED
+2026-11-19T14:34:09.1012401Z 
+2026-11-19T14:34:09.1012544Z #9 exporting to image
+2026-11-19T14:34:09.1012916Z #9 exporting layers done
+2026-11-19T14:34:09.1013658Z #9 exporting manifest sha256:6852cd71c4e8849e74bbe9294ad4c594d5b93c788dc7146ea56fe7526c90d883 done
+2026-11-19T14:34:09.1014797Z #9 exporting config sha256:f2db974519b525767514b06b2133f9d2c4a06093aa5c1eda425a44470854eecd done
+2026-11-19T14:34:09.1016019Z #9 exporting attestation manifest sha256:a86328e4fdd2e4533a566db57f161e46255a3c16879a63742b2100aa2b8bf1b0 done
+2026-11-19T14:34:09.1017313Z #9 exporting manifest list sha256:be7f85ee57d557c26e197394eee4a75193237079991c4a9fe3a22c8ca2da2c68 done
+2026-11-19T14:34:09.1018133Z #9 naming to docker.io/library/reengaja-moodle-moodle-demo:latest done
+2026-11-19T14:34:09.1018697Z #9 unpacking to docker.io/library/reengaja-moodle-moodle-demo:latest done
+2026-11-19T14:34:09.1019077Z #9 DONE 0.0s
+2026-11-19T14:34:09.1019187Z 
+2026-11-19T14:34:09.1019377Z #10 resolving provenance for metadata file
+2026-11-19T14:34:09.1102823Z #10 DONE 0.0s
+2026-11-19T14:34:09.1103908Z  Image reengaja-moodle-moodle-demo Built 
+2026-11-19T14:34:09.1381636Z  Container reengaja-moodle-rabbitmq-1 Running 
+2026-11-19T14:34:09.1382298Z  Container reengaja-moodle-mailpit-1 Running 
+2026-11-19T14:34:09.1397949Z  Container reengaja-moodle-moodle-demo-1 Recreate 
+2026-11-19T14:34:19.3037222Z  Container reengaja-moodle-moodle-demo-1 Recreated 
+2026-11-19T14:34:19.3297425Z  Container reengaja-moodle-moodle-demo-1 Starting 
+2026-11-19T14:34:19.4685283Z  Container reengaja-moodle-moodle-demo-1 Started 
+2026-11-19T14:34:19.5532058Z  Image reengaja-moodle-testes Building 
+2026-11-19T14:34:19.5533050Z  Image reengaja-moodle-moodle-demo Building 
+2026-11-19T14:34:19.6129177Z #1 [internal] load local bake definitions
+2026-11-19T14:34:19.7328330Z #1 reading from stdin 1.05kB done
+2026-11-19T14:34:19.7328913Z #1 DONE 0.0s
+2026-11-19T14:34:19.7329117Z 
+2026-11-19T14:34:19.7329343Z #2 [internal] load build definition from Dockerfile
+2026-11-19T14:34:19.7329913Z #2 transferring dockerfile: 202B done
+2026-11-19T14:34:19.7330385Z #2 DONE 0.0s
+2026-11-19T14:34:19.7330574Z 
+2026-11-19T14:34:19.7331312Z #3 [internal] load metadata for docker.io/library/python:3.12-slim
+2026-11-19T14:34:19.7332110Z #3 DONE 0.1s
+2026-11-19T14:34:19.9433375Z 
+2026-11-19T14:34:19.9434129Z #4 [internal] load .dockerignore
+2026-11-19T14:34:19.9435083Z #4 transferring context: 161B done
+2026-11-19T14:34:19.9435846Z #4 DONE 0.0s
+2026-11-19T14:34:19.9436063Z 
+2026-11-19T14:34:19.9436399Z #5 [internal] load build context
+2026-11-19T14:34:19.9436859Z #5 transferring context: 175.34kB 0.0s done
+2026-11-19T14:34:19.9437470Z #5 DONE 0.0s
+2026-11-19T14:34:19.9437645Z 
+2026-11-19T14:34:19.9438422Z #6 [1/5] FROM docker.io/library/python:3.12-slim@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b
+2026-11-19T14:34:19.9440374Z #6 resolve docker.io/library/python:3.12-slim@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b 0.0s done
+2026-11-19T14:34:19.9441622Z #6 DONE 0.0s
+2026-11-19T14:34:19.9442078Z 
+2026-11-19T14:34:19.9442256Z #7 [2/5] WORKDIR /app
+2026-11-19T14:34:19.9442559Z #7 CACHED
+2026-11-19T14:34:19.9442761Z 
+2026-11-19T14:34:19.9442977Z #8 [3/5] COPY requirements*.txt ./
+2026-11-19T14:34:19.9443429Z #8 DONE 0.0s
+2026-11-19T14:34:19.9443544Z 
+2026-11-19T14:34:19.9443870Z #9 [4/5] RUN pip install --no-cache-dir -r requirements-dev.txt
+2026-11-19T14:34:21.5315191Z #9 1.739 Collecting pika==1.3.2 (from -r /app/requirements.txt (line 1))
+2026-11-19T14:34:21.6352793Z #9 1.791   Downloading pika-1.3.2-py3-none-any.whl.metadata (13 kB)
+2026-11-19T14:34:21.6353711Z #9 1.842 Collecting pytest==8.4.2 (from -r requirements-dev.txt (line 2))
+2026-11-19T14:34:21.7474891Z #9 1.856   Downloading pytest-8.4.2-py3-none-any.whl.metadata (7.7 kB)
+2026-11-19T14:34:21.7476388Z #9 1.879 Collecting pytest-cov==7.0.0 (from -r requirements-dev.txt (line 3))
+2026-11-19T14:34:21.7477586Z #9 1.893   Downloading pytest_cov-7.0.0-py3-none-any.whl.metadata (31 kB)
+2026-11-19T14:34:21.7478785Z #9 1.918 Collecting iniconfig>=1 (from pytest==8.4.2->-r requirements-dev.txt (line 2))
+2026-11-19T14:34:21.7480058Z #9 1.931   Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+2026-11-19T14:34:21.7480886Z #9 1.955 Collecting packaging>=20 (from pytest==8.4.2->-r requirements-dev.txt (line 2))
+2026-11-19T14:34:21.9828540Z #9 1.968   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+2026-11-19T14:34:21.9829583Z #9 1.987 Collecting pluggy<2,>=1.5 (from pytest==8.4.2->-r requirements-dev.txt (line 2))
+2026-11-19T14:34:21.9830412Z #9 2.000   Downloading pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+2026-11-19T14:34:21.9831408Z #9 2.026 Collecting pygments>=2.7.2 (from pytest==8.4.2->-r requirements-dev.txt (line 2))
+2026-11-19T14:34:21.9832652Z #9 2.040   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+2026-11-19T14:34:22.2798932Z #9 2.487 Collecting coverage>=7.10.6 (from coverage[toml]>=7.10.6->pytest-cov==7.0.0->-r requirements-dev.txt (line 3))
+2026-11-19T14:34:22.3822522Z #9 2.500   Downloading coverage-7.17.3-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (8.3 kB)
+2026-11-19T14:34:22.3823617Z #9 2.534 Downloading pika-1.3.2-py3-none-any.whl (155 kB)
+2026-11-19T14:34:22.3824308Z #9 2.562 Downloading pytest-8.4.2-py3-none-any.whl (365 kB)
+2026-11-19T14:34:22.3825209Z #9 2.589 Downloading pytest_cov-7.0.0-py3-none-any.whl (22 kB)
+2026-11-19T14:34:22.4963109Z #9 2.603 Downloading coverage-7.17.3-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (264 kB)
+2026-11-19T14:34:22.4964312Z #9 2.617 Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+2026-11-19T14:34:22.4965061Z #9 2.631 Downloading packaging-26.3-py3-none-any.whl (129 kB)
+2026-11-19T14:34:22.4965774Z #9 2.644 Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)
+2026-11-19T14:34:22.4966530Z #9 2.657 Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+2026-11-19T14:34:22.4967702Z #9 2.674    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 71.9 MB/s eta 0:00:00
+2026-11-19T14:34:22.4969317Z #9 2.703 Installing collected packages: pygments, pluggy, pika, packaging, iniconfig, coverage, pytest, pytest-cov
+2026-11-19T14:34:23.6801398Z #9 3.887 Successfully installed coverage-7.17.3 iniconfig-2.3.1 packaging-26.3 pika-1.3.2 pluggy-1.7.0 pygments-2.21.0 pytest-8.4.2 pytest-cov-7.0.0
+2026-11-19T14:34:23.8781499Z #9 3.888 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+2026-11-19T14:34:23.8788326Z #9 3.963 
+2026-11-19T14:34:23.8791302Z #9 3.963 [notice] A new release of pip is available: 25.0.1 -> 26.3
+2026-11-19T14:34:23.8793064Z #9 3.963 [notice] To update, run: pip install --upgrade pip
+2026-11-19T14:34:23.8793638Z #9 DONE 4.1s
+2026-11-19T14:34:24.0715957Z 
+2026-11-19T14:34:24.0716835Z #10 [5/5] COPY . .
+2026-11-19T14:34:24.0717301Z #10 DONE 0.0s
+2026-11-19T14:34:24.0717503Z 
+2026-11-19T14:34:24.0717619Z #11 exporting to image
+2026-11-19T14:34:24.0717914Z #11 exporting layers
+2026-11-19T14:34:24.9076826Z #11 exporting layers 1.0s done
+2026-11-19T14:34:25.0811132Z #11 exporting manifest sha256:59e58f9895bc10e3323e977a534947ff7917cea0b524aa7d15445236da5e3094 done
+2026-11-19T14:34:25.0812588Z #11 exporting config sha256:1614292b9e2c775754431ba6dcf2f0427a0274c93ef6809ecc9de949edad9e8e done
+2026-11-19T14:34:25.0813505Z #11 exporting attestation manifest sha256:6c83db57f45367a12bcf218f05edca0f632824f18a99cbfb15756906674183d0 done
+2026-11-19T14:34:25.0814479Z #11 exporting manifest list sha256:706884fe64ddae1b1d63c1fe5e4e0caa06e04e37d195e684cba4039bdfbe33fd done
+2026-11-19T14:34:25.0815212Z #11 naming to docker.io/library/reengaja-moodle-testes:latest done
+2026-11-19T14:34:25.0815774Z #11 unpacking to docker.io/library/reengaja-moodle-testes:latest
+2026-11-19T14:34:25.2682402Z #11 unpacking to docker.io/library/reengaja-moodle-testes:latest 0.3s done
+2026-11-19T14:34:25.3369966Z #11 DONE 1.4s
+2026-11-19T14:34:25.3370661Z  Image reengaja-moodle-testes Built 
+2026-11-19T14:34:25.3371044Z 
+2026-11-19T14:34:25.3373635Z #12 resolving provenance for metadata file
+2026-11-19T14:34:25.3374175Z #12 DONE 0.0s
+2026-11-19T14:34:25.3660150Z  Container reengaja-moodle-moodle-demo-1 Waiting 
+2026-11-19T14:34:25.3660567Z  Container reengaja-moodle-rabbitmq-1 Waiting 
+2026-11-19T14:34:25.8675411Z  Container reengaja-moodle-rabbitmq-1 Healthy 
+2026-11-19T14:34:25.8676193Z  Container reengaja-moodle-moodle-demo-1 Healthy 
+2026-11-19T14:34:25.8676848Z  Container reengaja-moodle-testes-run-7ed46f011c85 Creating 
+2026-11-19T14:34:25.9351496Z  Container reengaja-moodle-testes-run-7ed46f011c85 Created 
+2026-11-19T14:34:27.7911649Z ........................................................................ [ 69%]
+2026-11-19T14:34:27.7912687Z ................................                                         [100%]
+2026-11-19T14:34:27.7913621Z --------------- generated xml file: /app/test-results/junit.xml ----------------
+2026-11-19T14:34:27.7914526Z ================================ tests coverage ================================
+2026-11-19T14:34:27.7915103Z _______________ coverage: platform linux, python 3.12.16-final-0 _______________
+2026-11-19T14:34:27.7915811Z 
+2026-11-19T14:34:27.7915974Z Name                         Stmts   Miss  Cover   Missing
+2026-11-19T14:34:27.7916399Z ----------------------------------------------------------
+2026-11-19T14:34:27.7916840Z acompanhamento/__init__.py       0      0   100%
+2026-11-19T14:34:27.7917285Z acompanhamento/moodle.py        83      2    98%   57, 82
+2026-11-19T14:34:27.7917726Z acompanhamento/service.py       44      0   100%
+2026-11-19T14:34:27.7918115Z infra/__init__.py                0      0   100%
+2026-11-19T14:34:27.7918547Z infra/broker.py                 34     15    56%   14-26, 47-48
+2026-11-19T14:34:27.7918986Z infra/config.py                 52      0   100%
+2026-11-19T14:34:27.7919363Z infra/events.py                 52      0   100%
+2026-11-19T14:34:27.7919904Z infra/health.py                 33      0   100%
+2026-11-19T14:34:27.7920319Z infra/logging.py                 8      2    75%   7-8
+2026-11-19T14:34:27.7920736Z notificacoes/__init__.py         0      0   100%
+2026-11-19T14:34:27.7921146Z notificacoes/mailer.py          44      1    98%   54
+2026-11-19T14:34:27.7921567Z notificacoes/service.py         20      0   100%
+2026-11-19T14:34:27.7922299Z notificacoes/store.py           50      4    92%   67, 86-88
+2026-11-19T14:34:27.7922758Z ----------------------------------------------------------
+2026-11-19T14:34:27.7923150Z TOTAL                          420     24    94%
+2026-11-19T14:34:27.7923575Z Coverage JSON written to file test-results/coverage.json
+2026-11-19T14:34:27.7923986Z 104 passed in 1.24s
+2026-11-19T14:34:29.8470103Z PASS I01: Somente Ana pendente e Carla em rascunho são selecionadas
+2026-11-19T14:34:29.8472014Z {"timestamp": "2026-11-19T14:34:27.933668+00:00", "event": "notificacao_sent", "event_id": "42:501:101", "attempts": 1, "error_type": ""}
+2026-11-19T14:34:29.8473905Z {"timestamp": "2026-11-19T14:34:27.942254+00:00", "event": "notificacao_sent", "event_id": "42:501:103", "attempts": 1, "error_type": ""}
+2026-11-19T14:34:29.8475367Z PASS I02: Dois lembretes chegam ao Mailpit por SMTP
+2026-11-19T14:34:29.8476627Z {"timestamp": "2026-11-19T14:34:27.947848+00:00", "event": "notificacao_duplicate", "event_id": "42:501:101", "attempts": 1, "error_type": ""}
+2026-11-19T14:34:29.8478331Z {"timestamp": "2026-11-19T14:34:27.949698+00:00", "event": "notificacao_duplicate", "event_id": "42:501:103", "attempts": 1, "error_type": ""}
+2026-11-19T14:34:29.8479905Z PASS I03: Reprocessar mensagens concluídas não gera e-mail
+2026-11-19T14:34:29.8481321Z {"timestamp": "2026-11-19T14:34:27.957519+00:00", "event": "notificacao_duplicate", "event_id": "42:501:101", "attempts": 1, "error_type": ""}
+2026-11-19T14:34:29.8483287Z {"timestamp": "2026-11-19T14:34:27.958684+00:00", "event": "notificacao_duplicate", "event_id": "42:501:103", "attempts": 1, "error_type": ""}
+2026-11-19T14:34:29.8484965Z PASS I04: Histórico continua válido após reabrir o banco
+2026-11-19T14:34:29.8486458Z {"timestamp": "2026-11-19T14:34:27.965724+00:00", "event": "notificacao_retry", "event_id": "42:501:104", "attempts": 1, "error_type": "ConnectionRefusedError"}
+2026-11-19T14:34:29.8488208Z PASS I05: Conexão SMTP recusada registra falha e encaminha para retry
+2026-11-19T14:34:29.8489636Z {"timestamp": "2026-11-19T14:34:28.578092+00:00", "event": "notificacao_sent", "event_id": "42:501:104", "attempts": 2, "error_type": ""}
+2026-11-19T14:34:29.8491147Z PASS I06: Após o TTL a mensagem retorna e o SMTP funciona
+2026-11-19T14:34:29.8492652Z {"timestamp": "2026-11-19T14:34:28.585286+00:00", "event": "notificacao_expired", "event_id": "42:501:105", "attempts": 0, "error_type": ""}
+2026-11-19T14:34:29.8494181Z PASS I07: Mensagem que vence enquanto espera na fila não é enviada
+2026-11-19T14:34:29.8495389Z {"timestamp": "2026-11-19T14:34:28.591286+00:00", "event": "mensagem_invalida", "reason": "contrato_invalido"}
+2026-11-19T14:34:29.8496589Z PASS I08: Contrato inválido vai para fila de falhas
+2026-11-19T14:34:29.8497951Z {"timestamp": "2026-11-19T14:34:28.594769+00:00", "event": "notificacao_retry", "event_id": "42:501:106", "attempts": 1, "error_type": "ConnectionRefusedError"}
+2026-11-19T14:34:29.8500285Z {"timestamp": "2026-11-19T14:34:29.201723+00:00", "event": "notificacao_retry", "event_id": "42:501:106", "attempts": 2, "error_type": "ConnectionRefusedError"}
+2026-11-19T14:34:29.8502327Z {"timestamp": "2026-11-19T14:34:29.809633+00:00", "event": "notificacao_dead", "event_id": "42:501:106", "attempts": 3, "error_type": "ConnectionRefusedError"}
+2026-11-19T14:34:29.8503986Z PASS I09: Três falhas encerram tentativas e preservam mensagem na DLQ
+2026-11-19T14:34:29.8504997Z Integração: 9 casos aprovados, 0 falhas.
+2026-11-19T14:34:29.9786301Z ##[group]Run mkdir -p test-results
+2026-11-19T14:34:29.9786881Z [36;1mmkdir -p test-results[0m
+2026-11-19T14:34:29.9787541Z [36;1mdocker compose ps --format json > test-results/containers.json[0m
+2026-11-19T14:34:29.9788395Z [36;1mdocker compose logs --no-color > test-results/compose.log[0m
+2026-11-19T14:34:29.9837622Z shell: /usr/bin/bash -e {0}
+2026-11-19T14:34:29.9838055Z ##[endgroup]
+2026-11-19T14:34:30.2287433Z ##[group]Run actions/upload-artifact@v4
+2026-11-19T14:34:30.2287746Z with:
+2026-11-19T14:34:30.2287951Z   name: registros-de-testes
+2026-11-19T14:34:30.2288204Z   path: test-results/
+evidencias/
+
+2026-11-19T14:34:30.2288464Z   if-no-files-found: warn
+2026-11-19T14:34:30.2288693Z   compression-level: 6
+2026-11-19T14:34:30.2288911Z   overwrite: false
+2026-11-19T14:34:30.2289122Z   include-hidden-files: false
+2026-11-19T14:34:30.2289358Z ##[endgroup]
+2026-11-19T14:34:30.4117030Z (node:4951) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-19T14:34:30.4118315Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-19T14:34:30.4256394Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-11-19T14:34:30.4259214Z The least common ancestor is /home/runner/work/reengaja-moodle/reengaja-moodle. This will be the root directory of the artifact
+2026-11-19T14:34:30.4260836Z With the provided path, there will be 24 files uploaded
+2026-11-19T14:34:30.4265239Z Artifact name is valid!
+2026-11-19T14:34:30.4266087Z Root directory input is valid!
+2026-11-19T14:34:30.6893824Z Beginning upload of artifact content to blob storage
+2026-11-19T14:34:30.7503432Z (node:4951) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-11-19T14:34:30.8079620Z Uploaded bytes 30515
+2026-11-19T14:34:30.8290588Z Finished uploading artifact content to blob storage!
+2026-11-19T14:34:30.8292051Z SHA256 digest of uploaded artifact zip is a87ea2477ae54522aa1c0e3501e374065c19d71c3666f8e2df669b0c2615b355
+2026-11-19T14:34:30.8294332Z Finalizing artifact upload
+2026-11-19T14:34:31.1937702Z Artifact registros-de-testes.zip successfully finalized. Artifact ID 14539771859
+2026-11-19T14:34:31.1939496Z Artifact registros-de-testes has been successfully uploaded! Final size is 30515 bytes. Artifact ID is 14539771859
+2026-11-19T14:34:31.1944676Z Artifact download URL: https://github.com/Idalencio/reengaja-moodle/actions/runs/44545022348/artifacts/14539771859
+2026-11-19T14:34:31.2140856Z ##[group]Run docker compose down
+2026-11-19T14:34:31.2141191Z [36;1mdocker compose down[0m
+2026-11-19T14:34:31.2174942Z shell: /usr/bin/bash -e {0}
+2026-11-19T14:34:31.2175252Z ##[endgroup]
+2026-11-19T14:34:31.3457657Z  Container reengaja-moodle-notificacoes-1 Stopping 
+2026-11-19T14:34:31.3458370Z  Container reengaja-moodle-acompanhamento-1 Stopping 
+2026-11-19T14:34:31.7919306Z  Container reengaja-moodle-acompanhamento-1 Stopped 
+2026-11-19T14:34:31.7920054Z  Container reengaja-moodle-acompanhamento-1 Removing 
+2026-11-19T14:34:31.8002756Z  Container reengaja-moodle-acompanhamento-1 Removed 
+2026-11-19T14:34:31.8003519Z  Container reengaja-moodle-moodle-demo-1 Stopping 
+2026-11-19T14:34:32.4644805Z  Container reengaja-moodle-notificacoes-1 Stopped 
+2026-11-19T14:34:32.4645903Z  Container reengaja-moodle-notificacoes-1 Removing 
+2026-11-19T14:34:32.4728531Z  Container reengaja-moodle-notificacoes-1 Removed 
+2026-11-19T14:34:32.4729312Z  Container reengaja-moodle-mailpit-1 Stopping 
+2026-11-19T14:34:32.4729916Z  Container reengaja-moodle-rabbitmq-1 Stopping 
+2026-11-19T14:34:32.9087237Z  Container reengaja-moodle-mailpit-1 Stopped 
+2026-11-19T14:34:32.9088075Z  Container reengaja-moodle-mailpit-1 Removing 
+2026-11-19T14:34:32.9172340Z  Container reengaja-moodle-mailpit-1 Removed 
+2026-11-19T14:34:33.7252494Z  Container reengaja-moodle-rabbitmq-1 Stopped 
+2026-11-19T14:34:33.7253092Z  Container reengaja-moodle-rabbitmq-1 Removing 
+2026-11-19T14:34:33.7352015Z  Container reengaja-moodle-rabbitmq-1 Removed 
+2026-11-19T14:34:41.9179012Z  Container reengaja-moodle-moodle-demo-1 Stopped 
+2026-11-19T14:34:41.9180009Z  Container reengaja-moodle-moodle-demo-1 Removing 
+2026-11-19T14:34:41.9252538Z  Container reengaja-moodle-moodle-demo-1 Removed 
+2026-11-19T14:34:41.9258909Z  Network reengaja-moodle_default Removing 
+2026-11-19T14:34:41.9827140Z  Network reengaja-moodle_default Removed 
+2026-11-19T14:34:41.9994249Z Post job cleanup.
+2026-11-19T14:34:42.0875793Z [command]/usr/bin/git version
+2026-11-19T14:34:42.0925982Z git version 2.56.1
+2026-11-19T14:34:42.0974785Z Temporarily overriding HOME='/home/runner/work/_temp/5d8f9f76-6093-4e4a-bba2-31719416bef4' before making global git config changes
+2026-11-19T14:34:42.0976090Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-19T14:34:42.0981112Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/reengaja-moodle/reengaja-moodle
+2026-11-19T14:34:42.1031263Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-19T14:34:42.1071361Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-19T14:34:42.1404233Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-19T14:34:42.1440953Z http.https://github.com/.extraheader
+2026-11-19T14:34:42.1453265Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-19T14:34:42.1498652Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-19T14:34:42.1807255Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-19T14:34:42.1844992Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-19T14:34:42.2303621Z Cleaning up orphan processes
+2026-11-19T14:34:42.2786893Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+

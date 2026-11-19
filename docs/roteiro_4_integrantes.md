@@ -44,13 +44,13 @@ Artur: Usar INICIAR_DEMO.bat com o Docker Desktop iniciado. Abrir localhost:8025
 
 Critérios de aceite verificados
 
-Vitor: Os 104 testes de unidade e componentes passaram novamente em 16 de novembro. Também passaram nove cenários de integração, usando Moodle simulado, RabbitMQ real e Mailpit real. Os cinco cenários M01 a M05 são o ensaio histórico de 6 de novembro no Moodle real da demonstração oficial, versão 5.3. São ambientes e datas diferentes. A cobertura medida é de 94,3% das instruções incluídas, excluindo pontos de entrada e scripts. Os pontos de entrada também rodaram separadamente e o reinício do consumidor preservou o histórico. Fontes: test-results/junit.xml, coverage.json, evidencias/integracao.json e moodle_real_fluxo.json.
+Vitor: Em 19 de novembro, o GitHub Actions executou o Docker Compose e aprovou os dois microsserviços. Ana e Carla receberam, Bruno não recebeu, e o reinício do consumidor preservou o histórico. Também passaram os 104 testes de unidade e componentes e os nove cenários de integração, usando Moodle simulado, RabbitMQ real e Mailpit real. A cobertura foi de 94,3% das instruções medidas. Os cinco cenários M01 a M05 são o ensaio histórico de 6 de novembro no Moodle real da demonstração oficial. Fontes: evidencias/ci_github.json, github_actions_19_11.log e moodle_real_fluxo.json.
 
 ## Slide 8 - Vitor Hugo
 
 Uso com a instituição
 
-Vitor: O projeto atende aos quatro comportamentos exercitados nos testes. A integração pública de demonstração não equivale à homologação no Moodle do parceiro. Precisamos registrar o feedback real, confirmar o ambiente e repetir o aceite se a instalação mudar. A composição Docker tem arquivos e verificação automática preparados, mas esta revisão não conseguiu executar o daemon no ambiente disponível. Também falta publicar os links e completar os relatos com a participação real de cada integrante. Essa distinção evita tratar preparação como comprovação. Fontes: docs/conferencia_final.md e enunciado páginas 10 a 12.
+Vitor: Os quatro critérios de aceite passaram nos testes e na execução com Docker. O código, os guias, os slides e as evidências estão no repositório público. Para uso com a instituição, precisamos confirmar curso, permissões da API e remetente, além de registrar o feedback do parceiro. Para a entrega, faltam o link do vídeo no YouTube e os relatos individuais com a participação real de cada integrante. Fontes: docs/conferencia_final.md e enunciado páginas 10 a 12.
 
 ## Perguntas que todos precisam saber responder
 
@@ -67,7 +67,7 @@ Vitor: O projeto atende aos quatro comportamentos exercitados nos testes. A inte
 | Há garantia absoluta de um único e-mail? | Não. SMTP e SQLite não têm transação conjunta. O critério comprovado cobre o que já ficou registrado como concluído. |
 | Foi integrado ao Moodle real? | Sim, houve ensaio na demonstração oficial em 06/11. O simulador local mantém a demonstração reproduzível. Não há homologação registrada na instalação do parceiro. |
 | O projeto melhorou a participação dos alunos? | Esse é o benefício esperado. Não houve medição de impacto educacional. |
-| Os contêineres foram executados? | Nesta revisão, a configuração foi validada, mas o ambiente bloqueou o daemon. O workflow preparado precisa produzir o registro real. |
+| Os contêineres foram executados? | Sim. Em 19/11, a execução 44545022348 do GitHub Actions aprovou os dois serviços, o reinício do consumidor, 104 testes e nove cenários de integração. |
 
 ## Comandos da demonstração
 

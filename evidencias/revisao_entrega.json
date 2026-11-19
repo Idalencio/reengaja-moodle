@@ -27,9 +27,16 @@
   },
   "compose_config": "validacao aprovada",
   "docker_execucao": {
-    "comprovada": false,
-    "bloqueio": "Docker daemon: socket: operation not permitted",
-    "verificacao_preparada": "https://github.com/Idalencio/reengaja-moodle/actions/workflows/tests.yml"
+    "comprovada": true,
+    "ambiente": "GitHub Actions, Docker Compose",
+    "execucao": "19/11/2026",
+    "url": "https://github.com/Idalencio/reengaja-moodle/actions/runs/44545022348",
+    "verificacoes_containers": 4,
+    "unitarios_componentes": 104,
+    "cenarios_integracao": 9,
+    "failed": 0,
+    "resumo": "evidencias/ci_github.json",
+    "logs": "evidencias/github_actions_19_11.log"
   },
   "publicacao_github": "https://github.com/Idalencio/reengaja-moodle",
   "publicacao_youtube": "pendente de revisar/gravar e publicar a apresentação",

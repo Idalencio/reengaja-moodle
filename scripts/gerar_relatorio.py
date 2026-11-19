@@ -19,6 +19,10 @@ evidencia = json.loads((ROOT/'evidencias/integracao.json').read_text())
 real = json.loads((ROOT/'evidencias/moodle_real_fluxo.json').read_text())
 cobertura = json.loads((ROOT/'test-results/coverage.json').read_text())['totals']
 suite = ET.parse(ROOT/'test-results/junit.xml').getroot().find('testsuite')
+ci_path = ROOT/'evidencias/ci_github.json'
+ci = json.loads(ci_path.read_text()) if ci_path.exists() else None
+docker_aprovado = bool(ci and ci.get('conclusion') == 'success')
+revisao = '19/11/2026'
 assert int(suite.attrib['failures']) == int(suite.attrib['errors']) == evidencia['failed'] == real['failed'] == 0
 testes = int(suite.attrib['tests'])
 data = datetime.fromisoformat(evidencia['executed_at']).astimezone(ZoneInfo('America/Sao_Paulo'))
@@ -65,7 +69,7 @@ def codigo(valor):
     texto('<br/>'.join(escape(l).replace(' ','&#160;') for l in valor.splitlines()),'codigo')
 
 texto('Serviço de reengajamento de estudantes','titulo')
-texto('Engenharia de Software II - 2026/2<br/>Revisão de 16/11/2026 para a entrega de 20/11/2026','sub')
+texto(f'Engenharia de Software II - 2026/2<br/>Revisão de {revisao} para a entrega de 20/11/2026','sub')
 texto('<b>Integrantes:</b> '+nomes,'sub')
 secao('1. Proposta e escopo')
 texto('O projeto envia um lembrete ao estudante que ainda não entregou uma tarefa do Moodle e tem até 24 horas para concluí-la. O e-mail informa a atividade, o prazo e o link de acesso. A intenção é apoiar o acompanhamento das pendências e reduzir contatos manuais.')
@@ -79,8 +83,12 @@ tabela(['Componente','Responsabilidade'],[
 ],[.27,.73])
 texto('Os dois microsserviços têm processos e Dockerfiles próprios. A consulta acontece ao iniciar e se repete a cada hora. O intervalo é configurável para a demonstração.')
 secao('3. Situação da revisão')
-texto(f'Em {data.strftime("%d/%m/%Y às %H:%M")}, passaram {testes} testes de unidade/componentes e nove cenários de integração. Os serviços também rodaram separadamente, com mensageria e SMTP reais. O ensaio histórico de 06/11 acrescenta cinco cenários no Moodle real da demonstração oficial.')
-texto('A configuração Docker está válida, mas sua execução ainda precisa ser comprovada: o ambiente desta revisão bloqueou a inicialização do daemon. Também faltam os links públicos e os registros extensionistas reais descritos na última página.','pequeno')
+texto(f'Em {revisao}, passaram novamente {testes} testes de unidade/componentes. O registro de {data.strftime("%d/%m/%Y")} preserva nove cenários locais de integração. O ensaio histórico de 06/11 acrescenta cinco cenários no Moodle real da demonstração oficial.')
+if docker_aprovado:
+    texto('O GitHub Actions também aprovou a execução com Docker: dois microsserviços prontos, lembretes para Ana e Carla, bloqueio de repetição e histórico preservado após reiniciar o consumidor. A suíte de testes e a integração passaram em contêineres.')
+else:
+    texto('A configuração Docker está válida. O workflow publicado executa os serviços e a suíte; o resultado precisa ser conferido na aba Actions.','pequeno')
+texto('Código e materiais: <link href="https://github.com/Idalencio/reengaja-moodle">github.com/Idalencio/reengaja-moodle</link>. O vídeo no YouTube e os registros extensionistas reais continuam pendentes.','pequeno')
 
 pagina('Regras e integração')
 secao('4. Seleção das pendências')
@@ -103,7 +111,7 @@ texto('Limite: SMTP e SQLite não compartilham uma transação. Uma queda entre 
 
 pagina('Critérios de aceite e evidências')
 secao('7. Resultados reproduzidos')
-texto(f'A suíte executada em 16/11 aprovou {testes} testes de unidade/componentes, sem falhas. A cobertura foi de {percentual}% das instruções medidas. O percentual exclui pontos de entrada, simulador e scripts. Os dois pontos de entrada também foram conferidos em processos separados.')
+texto(f'A suíte executada em {revisao} aprovou {testes} testes de unidade/componentes, sem falhas. A cobertura foi de {percentual}% das instruções medidas. O percentual exclui pontos de entrada, simulador e scripts. Os dois pontos de entrada também foram conferidos em processos separados.')
 texto('Os nove cenários I01 a I09 usam Moodle simulado, RabbitMQ real e Mailpit real. Eles produziram três e-mails: dois envios iniciais e um após recuperação da falha. O reinício do consumidor manteve o total e bloqueou duas repetições.')
 tabela(['Critério do professor','Verificação e resultado'],[
  ['1. Lembrete na janela','I01/I02: Ana e Carla recebem. M01: a pendência real chega ao Mailpit. Passou.'],
@@ -112,13 +120,14 @@ tabela(['Critério do professor','Verificação e resultado'],[
  ['4. Registro de falha e nova tentativa','I05/I06 e M05: erro SMTP registrado e sucesso na tentativa 2. I09 limita a três tentativas. Passou.'],
 ],[.36,.64])
 secao('8. Ensaio histórico com Moodle real')
-texto('Em 06/11, o projeto foi integrado ao Moodle 5.3 da demonstração oficial, com contas fictícias e duas atividades de teste. Cinco cenários passaram e dois e-mails chegaram ao Mailpit. Os registros M01 a M05 são históricos e não foram apresentados como nova execução de 16/11.')
+texto('Em 06/11, o projeto foi integrado ao Moodle 5.3 da demonstração oficial, com contas fictícias e duas atividades de teste. Cinco cenários passaram e dois e-mails chegaram ao Mailpit. Os registros M01 a M05 são históricos e não equivalem à homologação no Moodle do parceiro.')
 secao('Registros incluídos')
 tabela(['Pasta ou arquivo','O que comprova'],[
- ['test-results/junit.xml e coverage.json','Quantidade de testes, resultado e cobertura de 16/11'],
+ ['evidencias/unitarios_19_11.xml e .txt','104 testes locais aprovados em 19/11 e cobertura de 94%'],
  ['evidencias/integracao.json e .log','Nove cenários locais e histórico de processamento'],
  ['evidencias/ambiente.json e worker-*.log','Serviços separados, prontidão e reinício'],
  ['evidencias/moodle_real_fluxo.json, .log e EML','Ensaio de 06/11 e e-mails capturados'],
+ ['GitHub Actions e evidencias/ci_github.json','Execução Docker e suíte em contêineres' if docker_aprovado else 'Workflow de verificação publicado'],
 ],[.48,.52])
 
 pagina('Instalação e fechamento da entrega')
@@ -129,13 +138,16 @@ texto('Abra http://localhost:8025. Na demonstração nova, Ana e Carla recebem e
 codigo('docker compose exec acompanhamento python -m acompanhamento --once')
 texto('A verificação dos contêineres usa python scripts/verificar_containers.py após a inicialização. O workflow do GitHub repete esse roteiro, reinicia o consumidor e preserva os registros. Para encerrar conservando o histórico, use docker compose down.')
 secao('10. Pendências antes de 20/11')
-tabela(['Ação','Comprovação que ainda precisa ser acrescentada'],[
- ['Executar a composição Docker','test-results/execucao_containers.json e logs de uma execução real aprovada'],
- ['Publicar o repositório público','URL no EQUIPE.md e acesso conferido sem login'],
+pendencias = [
  ['Publicar o vídeo no YouTube','URL real da apresentação do grupo no EQUIPE.md'],
  ['Registrar a validação extensionista','Contato, retorno e ajustes reais em docs/validacao_parceiro.md'],
  ['Concluir os relatos individuais','Cada integrante revisar sua participação e aprendizagens'],
-],[.35,.65])
+]
+if not docker_aprovado:
+    pendencias.insert(0, ['Conferir a execução Docker','Resultado do workflow e test-results/execucao_containers.json'])
+tabela(['Ação','Comprovação que ainda precisa ser acrescentada'],pendencias,[.35,.65])
+if docker_aprovado:
+    texto('Execução aprovada: <link href="'+escape(ci['html_url'])+'">abrir resultado no GitHub Actions</link>. O artefato registros-de-testes contém os logs, as evidências de integração e a verificação dos contêineres.','pequeno')
 texto('O pacote contém oito slides editáveis, roteiro com falas para os quatro integrantes e bases nomeadas dos relatos individuais. Essas bases não substituem o relato da experiência de cada pessoa. O benefício educacional é esperado e ainda não foi medido.')
 texto('A matriz docs/conferencia_final.md relaciona todos os pedidos do enunciado ao código, à documentação e às evidências. O enunciado cita avaliação por rubrica, mas não apresenta seus pesos detalhados.','pequeno')
 secao('Referências')
@@ -148,7 +160,7 @@ for ref in ['Enunciado: projeto_2026_2.pdf, Engenharia de Software II, 2026/2.',
 def rodape(canvas,doc):
     canvas.setFont('Texto',8)
     canvas.setFillColor(colors.HexColor('#53616a'))
-    canvas.drawString(22*mm,14*mm,'Engenharia de Software II - Revisão de 16/11/2026')
+    canvas.drawString(22*mm,14*mm,'Engenharia de Software II - Revisão de '+revisao)
     canvas.drawRightString(A4[0]-22*mm,14*mm,str(doc.page))
 
 destino=Path(sys.argv[1]) if len(sys.argv)>1 else ROOT/'entrega/Relatorio_Tecnico_Reengaja_Moodle.pdf'
