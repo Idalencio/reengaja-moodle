@@ -1,0 +1,216 @@
+{
+  "executed_at": "2026-11-06T18:24:32.341388+00:00",
+  "run_id": "5e6cab2e",
+  "moodle_url": "https://sandbox.moodledemo.net",
+  "moodle_release": "5.3 (Build: 20261005)",
+  "environment": "Moodle oficial de demonstração real; RabbitMQ e Mailpit nativos reais",
+  "course_id": 2,
+  "source_mode": "real_moodle_public_demo",
+  "cases": [
+    {
+      "id": "M01",
+      "description": "Pendência lida do Moodle real chega ao Mailpit por SMTP",
+      "passed": true,
+      "detail": {
+        "event_id": "2:2:4",
+        "due_at": 1793996640,
+        "assignment_url": "https://sandbox.moodledemo.net/mod/assign/view.php?id=7",
+        "mailpit_total": 1
+      }
+    },
+    {
+      "id": "M02",
+      "description": "Reprocessar a solicitação real concluída não gera novo e-mail",
+      "passed": true,
+      "detail": {
+        "mailpit_total_after_replay": 1
+      }
+    },
+    {
+      "id": "M03",
+      "description": "Prazo real acima de 24 horas exclui a pendência",
+      "passed": true,
+      "detail": {
+        "duedate": 1794162300,
+        "selected_events": 0,
+        "mailpit_total": 1
+      }
+    },
+    {
+      "id": "M04",
+      "description": "Submissão final no Moodle real dispensa novo lembrete",
+      "passed": true,
+      "detail": {
+        "submission_status": "submitted",
+        "selected_events": 0,
+        "mailpit_total": 1
+      }
+    },
+    {
+      "id": "M05",
+      "description": "Evento vindo do Moodle real registra falha e conclui na segunda tentativa",
+      "passed": true,
+      "detail": {
+        "event_id": "2:3:4",
+        "status": "sent",
+        "attempts": 2,
+        "mailpit_total": 2
+      }
+    }
+  ],
+  "api_calls": [
+    {
+      "function": "mod_assign_get_assignments",
+      "http_status": 200,
+      "duration_seconds": 5.689
+    },
+    {
+      "function": "core_webservice_get_site_info",
+      "http_status": 200,
+      "duration_seconds": 5.741
+    },
+    {
+      "function": "mod_assign_get_assignments",
+      "http_status": 200,
+      "duration_seconds": 4.852
+    },
+    {
+      "function": "core_course_get_contents",
+      "http_status": 200,
+      "duration_seconds": 5.665
+    },
+    {
+      "function": "core_enrol_get_enrolled_users",
+      "http_status": 200,
+      "duration_seconds": 5.605
+    },
+    {
+      "function": "mod_assign_get_submissions",
+      "http_status": 200,
+      "duration_seconds": 5.706
+    },
+    {
+      "function": "mod_assign_get_assignments",
+      "http_status": 200,
+      "duration_seconds": 5.651
+    },
+    {
+      "function": "core_course_get_contents",
+      "http_status": 200,
+      "duration_seconds": 5.582
+    },
+    {
+      "function": "mod_assign_get_assignments",
+      "http_status": 200,
+      "duration_seconds": 5.544
+    },
+    {
+      "function": "mod_assign_save_submission",
+      "http_status": 200,
+      "duration_seconds": 5.519
+    },
+    {
+      "function": "mod_assign_submit_for_grading",
+      "http_status": 200,
+      "duration_seconds": 5.527
+    },
+    {
+      "function": "mod_assign_get_assignments",
+      "http_status": 200,
+      "duration_seconds": 5.624
+    },
+    {
+      "function": "core_course_get_contents",
+      "http_status": 200,
+      "duration_seconds": 6.039
+    },
+    {
+      "function": "core_enrol_get_enrolled_users",
+      "http_status": 200,
+      "duration_seconds": 5.868
+    },
+    {
+      "function": "mod_assign_get_submissions",
+      "http_status": 200,
+      "duration_seconds": 4.855
+    },
+    {
+      "function": "mod_assign_get_submissions",
+      "http_status": 200,
+      "duration_seconds": 5.011
+    },
+    {
+      "function": "mod_assign_get_assignments",
+      "http_status": 200,
+      "duration_seconds": 5.532
+    },
+    {
+      "function": "mod_assign_get_assignments",
+      "http_status": 200,
+      "duration_seconds": 5.682
+    },
+    {
+      "function": "core_course_get_contents",
+      "http_status": 200,
+      "duration_seconds": 6.608
+    },
+    {
+      "function": "core_enrol_get_enrolled_users",
+      "http_status": 200,
+      "duration_seconds": 5.487
+    },
+    {
+      "function": "mod_assign_get_submissions",
+      "http_status": 200,
+      "duration_seconds": 5.613
+    },
+    {
+      "function": "mod_assign_get_submissions",
+      "http_status": 200,
+      "duration_seconds": 5.51
+    }
+  ],
+  "smtp_flow_verified": true,
+  "institutional_validation": false,
+  "containers_executed": false,
+  "passed": 5,
+  "failed": 0,
+  "task_ids": [
+    2,
+    3
+  ],
+  "student_id": 4,
+  "audit": [
+    {
+      "event_id": "2:2:4",
+      "outcome": "sent",
+      "attempts": 1,
+      "error_type": ""
+    },
+    {
+      "event_id": "2:2:4",
+      "outcome": "duplicate",
+      "attempts": 1,
+      "error_type": ""
+    },
+    {
+      "event_id": "2:3:4",
+      "outcome": "retry",
+      "attempts": 1,
+      "error_type": "ConnectionRefusedError"
+    },
+    {
+      "event_id": "2:3:4",
+      "outcome": "sent",
+      "attempts": 2,
+      "error_type": ""
+    }
+  ],
+  "mailpit_message_count": 2,
+  "completed_at": "2026-11-06T18:27:50.588204+00:00",
+  "limitations": [
+    "Instância pública de demonstração; não é o Moodle da instituição.",
+    "A demonstração pública é reiniciada a cada hora; os IDs e tokens não são persistentes.",
+    "Contêineres ainda não foram executados neste ambiente."
+  ]
+}

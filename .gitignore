@@ -1,0 +1,12 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+htmlcov/
+*.sqlite3*
+test-results/
+!evidencias/
+erl_crash.dump
+*.mp4

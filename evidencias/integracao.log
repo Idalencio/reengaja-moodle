@@ -1,0 +1,23 @@
+PASS I01: Somente Ana pendente e Carla em rascunho são selecionadas
+{"timestamp": "2026-11-16T16:47:47.325609+00:00", "event": "notificacao_sent", "event_id": "42:501:101", "attempts": 1, "error_type": ""}
+{"timestamp": "2026-11-16T16:47:47.328632+00:00", "event": "notificacao_sent", "event_id": "42:501:103", "attempts": 1, "error_type": ""}
+PASS I02: Dois lembretes chegam ao Mailpit por SMTP
+{"timestamp": "2026-11-16T16:47:47.331614+00:00", "event": "notificacao_duplicate", "event_id": "42:501:101", "attempts": 1, "error_type": ""}
+{"timestamp": "2026-11-16T16:47:47.332018+00:00", "event": "notificacao_duplicate", "event_id": "42:501:103", "attempts": 1, "error_type": ""}
+PASS I03: Reprocessar mensagens concluídas não gera e-mail
+{"timestamp": "2026-11-16T16:47:47.336004+00:00", "event": "notificacao_duplicate", "event_id": "42:501:101", "attempts": 1, "error_type": ""}
+{"timestamp": "2026-11-16T16:47:47.336351+00:00", "event": "notificacao_duplicate", "event_id": "42:501:103", "attempts": 1, "error_type": ""}
+PASS I04: Histórico continua válido após reabrir o banco
+{"timestamp": "2026-11-16T16:47:47.341180+00:00", "event": "notificacao_retry", "event_id": "42:501:104", "attempts": 1, "error_type": "ConnectionRefusedError"}
+PASS I05: Conexão SMTP recusada registra falha e encaminha para retry
+{"timestamp": "2026-11-16T16:47:47.949838+00:00", "event": "notificacao_sent", "event_id": "42:501:104", "attempts": 2, "error_type": ""}
+PASS I06: Após o TTL a mensagem retorna e o SMTP funciona
+{"timestamp": "2026-11-16T16:47:47.953666+00:00", "event": "notificacao_expired", "event_id": "42:501:105", "attempts": 0, "error_type": ""}
+PASS I07: Mensagem que vence enquanto espera na fila não é enviada
+{"timestamp": "2026-11-16T16:47:47.957389+00:00", "event": "mensagem_invalida", "reason": "contrato_invalido"}
+PASS I08: Contrato inválido vai para fila de falhas
+{"timestamp": "2026-11-16T16:47:47.958849+00:00", "event": "notificacao_retry", "event_id": "42:501:106", "attempts": 1, "error_type": "ConnectionRefusedError"}
+{"timestamp": "2026-11-16T16:47:48.563837+00:00", "event": "notificacao_retry", "event_id": "42:501:106", "attempts": 2, "error_type": "ConnectionRefusedError"}
+{"timestamp": "2026-11-16T16:47:49.169239+00:00", "event": "notificacao_dead", "event_id": "42:501:106", "attempts": 3, "error_type": "ConnectionRefusedError"}
+PASS I09: Três falhas encerram tentativas e preservam mensagem na DLQ
+Integração: 9 casos aprovados, 0 falhas.

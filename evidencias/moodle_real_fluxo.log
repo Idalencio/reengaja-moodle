@@ -1,0 +1,16 @@
+Ajustando o prazo conforme o fuso real do Moodle (Australia/Perth)...
+Atividade real com prazo elegível; estudante fictício identificado.
+Consultando pendência real e enviando por AMQP/SMTP...
+{"timestamp": "2026-11-06T18:25:27.465774+00:00", "event": "notificacao_sent", "event_id": "2:2:4", "attempts": 1, "error_type": ""}
+PASS M01 Pendência lida do Moodle real chega ao Mailpit por SMTP
+{"timestamp": "2026-11-06T18:25:27.472938+00:00", "event": "notificacao_duplicate", "event_id": "2:2:4", "attempts": 1, "error_type": ""}
+PASS M02 Reprocessar a solicitação real concluída não gera novo e-mail
+Mudando a atividade de teste para fora da janela de 24 horas...
+PASS M03 Prazo real acima de 24 horas exclui a pendência
+Restaurando o prazo e fazendo a submissão pela conta fictícia...
+PASS M04 Submissão final no Moodle real dispensa novo lembrete
+Criando segunda atividade própria para o teste de recuperação SMTP...
+{"timestamp": "2026-11-06T18:27:49.974533+00:00", "event": "notificacao_retry", "event_id": "2:3:4", "attempts": 1, "error_type": "ConnectionRefusedError"}
+{"timestamp": "2026-11-06T18:27:50.584235+00:00", "event": "notificacao_sent", "event_id": "2:3:4", "attempts": 2, "error_type": ""}
+PASS M05 Evento vindo do Moodle real registra falha e conclui na segunda tentativa
+Fluxo Moodle real concluído: 5 cenários passaram, 2 e-mails capturados.

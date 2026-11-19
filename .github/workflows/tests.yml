@@ -1,0 +1,30 @@
+name: Testes e integração
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Iniciar os dois microsserviços e a infraestrutura
+        run: docker compose up -d --build --wait --wait-timeout 180
+      - name: Conferir envio e persistência com os serviços em contêineres
+        run: python3 scripts/verificar_containers.py
+      - name: Executar testes unitários e integração em contêineres
+        run: docker compose run --build --rm testes
+      - name: Registrar logs do ambiente
+        if: always()
+        run: |
+          mkdir -p test-results
+          docker compose ps --format json > test-results/containers.json
+          docker compose logs --no-color > test-results/compose.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: registros-de-testes
+          path: |
+            test-results/
+            evidencias/
+      - name: Encerrar ambiente
+        if: always()
+        run: docker compose down

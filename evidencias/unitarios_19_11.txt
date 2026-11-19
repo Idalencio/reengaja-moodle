@@ -1,0 +1,25 @@
+........................................................................ [ 69%]
+................................                                         [100%]
+- generated xml file: /workspace/scratch/1143e018c571/project/reengaja-moodle/test-results/junit.xml -
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.14-final-0 _______________
+
+Name                         Stmts   Miss  Cover   Missing
+----------------------------------------------------------
+acompanhamento/__init__.py       0      0   100%
+acompanhamento/moodle.py        83      2    98%   57, 82
+acompanhamento/service.py       44      0   100%
+infra/__init__.py                0      0   100%
+infra/broker.py                 34     15    56%   14-26, 47-48
+infra/config.py                 52      0   100%
+infra/events.py                 52      0   100%
+infra/health.py                 33      0   100%
+infra/logging.py                 8      2    75%   7-8
+notificacoes/__init__.py         0      0   100%
+notificacoes/mailer.py          44      1    98%   54
+notificacoes/service.py         20      0   100%
+notificacoes/store.py           50      4    92%   67, 86-88
+----------------------------------------------------------
+TOTAL                          420     24    94%
+Coverage JSON written to file test-results/coverage.json
+104 passed in 0.88s

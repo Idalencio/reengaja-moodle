@@ -1,0 +1,44 @@
+Return-Path: <lembretes@example.test>
+Received: from [172.26.47.181] (unknown [127.0.0.1])
+        by c254da479c12 (Mailpit) with SMTP
+        for <student@moodle.a>; Fri, 6 Nov 2026 15:27:50 -0300 (-03)
+From: Reengaja Moodle <lembretes@example.test>
+To: student@moodle.a
+Subject: Lembrete: REENGAJA-TESTE-5e6cab2e-B
+Date: Fri, 06 Nov 2026 18:27:50 +0000
+Message-ID: <reengaja-123315c38b10f9d50c20b200be8d63c9a75297837536d93fb3bc0e1fa4299c57@example.test>
+X-Reengajamento-ID: 2:3:4
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============5307951636886200703=="
+
+--===============5307951636886200703==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Olá, Sam Student!
+
+A tarefa "REENGAJA-TESTE-5e6cab2e-B" ainda está pendente.
+Prazo: 06/11/2026 às 17:27 (America/Sao_Paulo).
+Acesse: https://sandbox.moodledemo.net/mod/assign/view.php?id=8
+
+Este lembrete convida você a retomar sua participação.
+Se já enviou a tarefa após esta verificação, desconsidere esta mensagem.
+
+Equipe de apoio acadêmico
+
+--===============5307951636886200703==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<html lang=3D'pt-BR'><body><p>Ol=C3=A1, Sam Student!</p><p>A tarefa <strong>R=
+EENGAJA-TESTE-5e6cab2e-B</strong> ainda est=C3=A1 pendente.</p><p>Prazo: <str=
+ong>06/11/2026 =C3=A0s 17:27</strong> (America/Sao_Paulo).</p><p><a href=3D'h=
+ttps://sandbox.moodledemo.net/mod/assign/view.php?id=3D8'>Acessar a tarefa no=
+ Moodle</a></p><p>Este lembrete convida voc=C3=AA a retomar sua participa=C3=
+=A7=C3=A3o.</p><p>Se j=C3=A1 enviou a tarefa ap=C3=B3s esta verifica=C3=A7=C3=
+=A3o, desconsidere esta mensagem.</p><p>Equipe de apoio acad=C3=AAmico</p></b=
+ody></html>
+
+--===============5307951636886200703==--

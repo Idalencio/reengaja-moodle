@@ -1,0 +1,137 @@
+name: reengaja-moodle
+
+x-app-env: &app-env
+  MOODLE_URL: ${MOODLE_URL:-http://moodle-demo:8080}
+  MOODLE_TOKEN: ${MOODLE_TOKEN:-token-demonstracao}
+  MOODLE_COURSE_ID: ${MOODLE_COURSE_ID:-42}
+  AMQP_URL: ${AMQP_URL:-amqp://reengaja:demo-local@rabbitmq:5672/%2F}
+  QUEUE_PREFIX: ${QUEUE_PREFIX:-reengajamento}
+  RETRY_DELAY_MS: ${RETRY_DELAY_MS:-60000}
+  MAX_ATTEMPTS: ${MAX_ATTEMPTS:-3}
+  SMTP_HOST: ${SMTP_HOST:-mailpit}
+  SMTP_PORT: ${SMTP_PORT:-1025}
+  SMTP_SECURITY: ${SMTP_SECURITY:-none}
+  SMTP_USER: ${SMTP_USER:-}
+  SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+  MAIL_FROM: ${MAIL_FROM:-Reengaja Moodle <lembretes@example.test>}
+  DISPLAY_TIMEZONE: ${DISPLAY_TIMEZONE:-America/Sao_Paulo}
+
+services:
+  rabbitmq:
+    image: rabbitmq:4.1-management
+    environment:
+      RABBITMQ_DEFAULT_USER: reengaja
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD:-demo-local}
+    ports:
+      - "127.0.0.1:5672:5672"
+      - "127.0.0.1:15672:15672"
+    volumes:
+      - rabbit-data:/var/lib/rabbitmq
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    restart: unless-stopped
+
+  mailpit:
+    image: axllent/mailpit:v1.27.4
+    environment:
+      MP_DATABASE: /data/mailpit.db
+      MP_MAX_MESSAGES: 5000
+    ports:
+      - "127.0.0.1:8025:8025"
+      - "127.0.0.1:1025:1025"
+    volumes:
+      - mailpit-data:/data
+    restart: unless-stopped
+
+  moodle-demo:
+    build:
+      context: .
+      dockerfile: demo/Dockerfile
+    ports:
+      - "127.0.0.1:8080:8080"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8080/health', timeout=3)"]
+      interval: 5s
+      timeout: 4s
+      retries: 10
+    restart: unless-stopped
+
+  acompanhamento:
+    build:
+      context: .
+      dockerfile: acompanhamento/Dockerfile
+    environment:
+      <<: *app-env
+      POLL_INTERVAL_SECONDS: ${POLL_INTERVAL_SECONDS:-3600}
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      moodle-demo:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:8081:8081"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8081/ready', timeout=3)"]
+      interval: 15s
+      timeout: 4s
+      retries: 5
+      start_period: 30s
+    restart: unless-stopped
+
+  notificacoes:
+    build:
+      context: .
+      dockerfile: notificacoes/Dockerfile
+    environment:
+      <<: *app-env
+      DATABASE_PATH: /data/notificacoes.sqlite3
+    volumes:
+      - notification-data:/data
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      mailpit:
+        condition: service_started
+    ports:
+      - "127.0.0.1:8082:8081"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8081/ready', timeout=3)"]
+      interval: 15s
+      timeout: 4s
+      retries: 5
+    restart: unless-stopped
+
+  testes:
+    profiles: ["testes"]
+    build:
+      context: .
+      dockerfile: tests/Dockerfile
+    environment:
+      <<: *app-env
+      MOODLE_URL: http://moodle-demo:8080
+      MOODLE_TOKEN: token-demonstracao
+      MOODLE_COURSE_ID: 42
+      MAILPIT_API: http://mailpit:8025
+      SMTP_HOST: mailpit
+      SMTP_PORT: 1025
+      SMTP_SECURITY: none
+      SMTP_USER: ""
+      SMTP_PASSWORD: ""
+    volumes:
+      - ./test-results:/app/test-results
+      - ./evidencias:/app/evidencias
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      moodle-demo:
+        condition: service_healthy
+      mailpit:
+        condition: service_started
+
+volumes:
+  rabbit-data:
+  mailpit-data:
+  notification-data:

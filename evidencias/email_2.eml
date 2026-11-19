@@ -1,0 +1,44 @@
+Return-Path: <lembretes@example.test>
+Received: from [172.26.55.195] (unknown [127.0.0.1])
+        by bff38d0b5ec3 (Mailpit) with SMTP
+        for <carla+b881f3ad67@example.test>; Mon, 16 Nov 2026 13:47:47 -0300 (-03)
+From: Reengaja Moodle <lembretes@example.test>
+To: carla+b881f3ad67@example.test
+Subject: Lembrete: Projeto de Engenharia de Software II
+Date: Mon, 16 Nov 2026 16:47:47 +0000
+Message-ID: <reengaja-50504ba0fa133091a6a449390f828e88ccd6fc739f15cc36b25603ed9c9959ab@example.test>
+X-Reengajamento-ID: 42:501:103
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============3707088760907405569=="
+
+--===============3707088760907405569==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Olá, Carla Exemplo!
+
+A tarefa "Projeto de Engenharia de Software II" ainda está pendente.
+Prazo: 16/11/2026 às 15:47 (America/Sao_Paulo).
+Acesse: http://127.0.0.1:8080/mod/assign/view.php?id=1501
+
+Este lembrete convida você a retomar sua participação.
+Se já enviou a tarefa após esta verificação, desconsidere esta mensagem.
+
+Equipe de apoio acadêmico
+
+--===============3707088760907405569==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<html lang=3D'pt-BR'><body><p>Ol=C3=A1, Carla Exemplo!</p><p>A tarefa <strong=
+>Projeto de Engenharia de Software II</strong> ainda est=C3=A1 pendente.</p><=
+p>Prazo: <strong>16/11/2026 =C3=A0s 15:47</strong> (America/Sao_Paulo).</p><p=
+><a href=3D'http://127.0.0.1:8080/mod/assign/view.php?id=3D1501'>Acessar a ta=
+refa no Moodle</a></p><p>Este lembrete convida voc=C3=AA a retomar sua partic=
+ipa=C3=A7=C3=A3o.</p><p>Se j=C3=A1 enviou a tarefa ap=C3=B3s esta verifica=C3=
+=A7=C3=A3o, desconsidere esta mensagem.</p><p>Equipe de apoio acad=C3=AAmico<=
+/p></body></html>
+
+--===============3707088760907405569==--

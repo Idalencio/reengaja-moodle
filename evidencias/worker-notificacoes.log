@@ -1,0 +1,2 @@
+{"timestamp": "2026-11-16T16:47:49.277312+00:00", "event": "notificacao_sent", "event_id": "42:501:101", "attempts": 1, "error_type": ""}
+{"timestamp": "2026-11-16T16:47:49.281651+00:00", "event": "notificacao_sent", "event_id": "42:501:103", "attempts": 1, "error_type": ""}

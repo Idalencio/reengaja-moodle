@@ -1,0 +1,12 @@
+.git
+.env
+.venv
+__pycache__
+.pytest_cache
+htmlcov
+*.sqlite3*
+evidencias
+test-results
+entrega
+erl_crash.dump
+apresentacao

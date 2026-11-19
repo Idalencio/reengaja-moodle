@@ -1,0 +1,38 @@
+{
+  "revisado_em": "2026-11-19T14:11:00.606092+00:00",
+  "integrantes": [
+    "Lucas Gallesio",
+    "Pedro Idalencio",
+    "Artur Thomé",
+    "Vitor Hugo"
+  ],
+  "unitarios_componentes": {
+    "passed": 104,
+    "failed": 0,
+    "execucao": "19/11/2026",
+    "cobertura_percentual": 94,
+    "registro": "evidencias/unitarios_19_11.xml"
+  },
+  "integracao_local": {
+    "passed": 9,
+    "failed": 0,
+    "execucao": "16/11/2026",
+    "ambiente": "Moodle simulado, RabbitMQ real e Mailpit real, execução nativa"
+  },
+  "moodle_real_historico": {
+    "passed": 5,
+    "failed": 0,
+    "execucao": "06/11/2026",
+    "origem": "Moodle 5.3 da demonstração oficial"
+  },
+  "compose_config": "validacao aprovada",
+  "docker_execucao": {
+    "comprovada": false,
+    "bloqueio": "Docker daemon: socket: operation not permitted",
+    "verificacao_preparada": "https://github.com/Idalencio/reengaja-moodle/actions/workflows/tests.yml"
+  },
+  "publicacao_github": "https://github.com/Idalencio/reengaja-moodle",
+  "publicacao_youtube": "pendente de revisar/gravar e publicar a apresentação",
+  "relatos_individuais": "bases nomeadas preparadas; contribuições e experiências pessoais não informadas",
+  "retorno_parceiro": "sem registro fornecido"
+}

@@ -1,0 +1,23 @@
+{
+  "versions": {
+    "rabbitmq": "3.12.1",
+    "mailpit": "1.27.4",
+    "python": "3.12.14",
+    "docker_compose": "configura\u00e7\u00e3o validada; cont\u00eaineres n\u00e3o executados neste ambiente",
+    "moodle": "simulador REST, sem valida\u00e7\u00e3o no Moodle institucional"
+  },
+  "workers_ready": [
+    {
+      "service": "acompanhamento",
+      "ready": true,
+      "last_success": 1794847669.2709744
+    },
+    {
+      "service": "notificacoes",
+      "ready": true,
+      "last_success": 1794847669.2632837
+    }
+  ],
+  "worker_smoke": "2 e-mails adicionais aceitos no Mailpit",
+  "worker_restart": "processo reiniciado, duas duplicatas ignoradas e nenhum novo e-mail"
+}

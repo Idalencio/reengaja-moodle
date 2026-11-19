@@ -1,0 +1,305 @@
+{
+  "executed_at": "2026-11-16T16:47:49.173261+00:00",
+  "run_id": "b881f3ad67",
+  "environment": {
+    "moodle": "simulador HTTP do contrato REST; não é instalação Moodle",
+    "broker": "RabbitMQ real por AMQP 0-9-1",
+    "smtp": "Mailpit real por SMTP",
+    "python": "3.12.14"
+  },
+  "passed": 9,
+  "failed": 0,
+  "cases": [
+    {
+      "id": "I01",
+      "description": "Somente Ana pendente e Carla em rascunho são selecionadas",
+      "passed": true,
+      "detail": {
+        "events": [
+          "42:501:101",
+          "42:501:103"
+        ],
+        "expected_students": [
+          101,
+          103
+        ]
+      }
+    },
+    {
+      "id": "I02",
+      "description": "Dois lembretes chegam ao Mailpit por SMTP",
+      "passed": true,
+      "detail": {
+        "mailpit_messages": 2
+      }
+    },
+    {
+      "id": "I03",
+      "description": "Reprocessar mensagens concluídas não gera e-mail",
+      "passed": true,
+      "detail": {
+        "mailpit_messages_after_replay": 2
+      }
+    },
+    {
+      "id": "I04",
+      "description": "Histórico continua válido após reabrir o banco",
+      "passed": true,
+      "detail": {
+        "mailpit_messages_after_store_reopen": 2
+      }
+    },
+    {
+      "id": "I05",
+      "description": "Conexão SMTP recusada registra falha e encaminha para retry",
+      "passed": true,
+      "detail": {
+        "status": "retry",
+        "attempts": 1,
+        "error_type": "ConnectionRefusedError",
+        "retry_delay_ms": 500
+      }
+    },
+    {
+      "id": "I06",
+      "description": "Após o TTL a mensagem retorna e o SMTP funciona",
+      "passed": true,
+      "detail": {
+        "status": "sent",
+        "attempts": 2,
+        "mailpit_messages": 3
+      }
+    },
+    {
+      "id": "I07",
+      "description": "Mensagem que vence enquanto espera na fila não é enviada",
+      "passed": true,
+      "detail": {
+        "mailpit_messages": 3
+      }
+    },
+    {
+      "id": "I08",
+      "description": "Contrato inválido vai para fila de falhas",
+      "passed": true,
+      "detail": {
+        "dead_messages": 1
+      }
+    },
+    {
+      "id": "I09",
+      "description": "Três falhas encerram tentativas e preservam mensagem na DLQ",
+      "passed": true,
+      "detail": {
+        "status": "dead",
+        "attempts": 3,
+        "dead_messages": 2
+      }
+    }
+  ],
+  "deliveries": [
+    {
+      "event_id": "42:501:101",
+      "status": "sent",
+      "attempts": 1,
+      "error_type": ""
+    },
+    {
+      "event_id": "42:501:103",
+      "status": "sent",
+      "attempts": 1,
+      "error_type": ""
+    },
+    {
+      "event_id": "42:501:104",
+      "status": "sent",
+      "attempts": 2,
+      "error_type": ""
+    },
+    {
+      "event_id": "42:501:105",
+      "status": "expired",
+      "attempts": 0,
+      "error_type": ""
+    },
+    {
+      "event_id": "42:501:106",
+      "status": "dead",
+      "attempts": 3,
+      "error_type": "ConnectionRefusedError"
+    }
+  ],
+  "audit": [
+    {
+      "event_id": "42:501:101",
+      "outcome": "sent",
+      "attempts": 1,
+      "error_type": "",
+      "recorded_at": 1794847667
+    },
+    {
+      "event_id": "42:501:103",
+      "outcome": "sent",
+      "attempts": 1,
+      "error_type": "",
+      "recorded_at": 1794847667
+    },
+    {
+      "event_id": "42:501:101",
+      "outcome": "duplicate",
+      "attempts": 1,
+      "error_type": "",
+      "recorded_at": 1794847667
+    },
+    {
+      "event_id": "42:501:103",
+      "outcome": "duplicate",
+      "attempts": 1,
+      "error_type": "",
+      "recorded_at": 1794847667
+    },
+    {
+      "event_id": "42:501:101",
+      "outcome": "duplicate",
+      "attempts": 1,
+      "error_type": "",
+      "recorded_at": 1794847667
+    },
+    {
+      "event_id": "42:501:103",
+      "outcome": "duplicate",
+      "attempts": 1,
+      "error_type": "",
+      "recorded_at": 1794847667
+    },
+    {
+      "event_id": "42:501:104",
+      "outcome": "retry",
+      "attempts": 1,
+      "error_type": "ConnectionRefusedError",
+      "recorded_at": 1794847667
+    },
+    {
+      "event_id": "42:501:104",
+      "outcome": "sent",
+      "attempts": 2,
+      "error_type": "",
+      "recorded_at": 1794847667
+    },
+    {
+      "event_id": "42:501:105",
+      "outcome": "expired",
+      "attempts": 0,
+      "error_type": "",
+      "recorded_at": 1794847667
+    },
+    {
+      "event_id": "42:501:106",
+      "outcome": "retry",
+      "attempts": 1,
+      "error_type": "ConnectionRefusedError",
+      "recorded_at": 1794847667
+    },
+    {
+      "event_id": "42:501:106",
+      "outcome": "retry",
+      "attempts": 2,
+      "error_type": "ConnectionRefusedError",
+      "recorded_at": 1794847668
+    },
+    {
+      "event_id": "42:501:106",
+      "outcome": "dead",
+      "attempts": 3,
+      "error_type": "ConnectionRefusedError",
+      "recorded_at": 1794847669
+    }
+  ],
+  "emails": [
+    {
+      "ID": "9YxyuVuawfMKrjDFWXmT8n",
+      "MessageID": "reengaja-881aa756646e22236308fef233fb4b55ba884fcdca851690f9fd2758e968d977@example.test",
+      "Read": false,
+      "From": {
+        "Name": "Reengaja Moodle",
+        "Address": "lembretes@example.test"
+      },
+      "To": [
+        {
+          "Name": "",
+          "Address": "davi+b881f3ad67@example.test"
+        }
+      ],
+      "Cc": null,
+      "Bcc": null,
+      "ReplyTo": null,
+      "Subject": "Lembrete: Projeto de Engenharia de Software II",
+      "Created": "2026-11-16T13:47:47.948-03:00",
+      "Username": "",
+      "Tags": [
+        "b881f3ad67"
+      ],
+      "Size": 1904,
+      "Attachments": 0,
+      "Snippet": "Olá, Davi Exemplo! A tarefa Projeto de Engenharia de Software II ainda está pendente. Prazo: 16/11/2026 às 15:47 (America/Sao_Paulo). Acessar a tarefa no Moodle Este lembrete convida você a retoma..."
+    },
+    {
+      "ID": "ML7b3yqYCZw2v9xhJfTwxN",
+      "MessageID": "reengaja-50504ba0fa133091a6a449390f828e88ccd6fc739f15cc36b25603ed9c9959ab@example.test",
+      "Read": false,
+      "From": {
+        "Name": "Reengaja Moodle",
+        "Address": "lembretes@example.test"
+      },
+      "To": [
+        {
+          "Name": "",
+          "Address": "carla+b881f3ad67@example.test"
+        }
+      ],
+      "Cc": null,
+      "Bcc": null,
+      "ReplyTo": null,
+      "Subject": "Lembrete: Projeto de Engenharia de Software II",
+      "Created": "2026-11-16T13:47:47.327-03:00",
+      "Username": "",
+      "Tags": [
+        "b881f3ad67"
+      ],
+      "Size": 1908,
+      "Attachments": 0,
+      "Snippet": "Olá, Carla Exemplo! A tarefa Projeto de Engenharia de Software II ainda está pendente. Prazo: 16/11/2026 às 15:47 (America/Sao_Paulo). Acessar a tarefa no Moodle Este lembrete convida você a retom..."
+    },
+    {
+      "ID": "Cd6E7adhfVAXRfSDeHqyNr",
+      "MessageID": "reengaja-941451f30f1169da512d5bba210f3c20d3949528c9ffb261dfa7d922463b105f@example.test",
+      "Read": false,
+      "From": {
+        "Name": "Reengaja Moodle",
+        "Address": "lembretes@example.test"
+      },
+      "To": [
+        {
+          "Name": "",
+          "Address": "ana+b881f3ad67@example.test"
+        }
+      ],
+      "Cc": null,
+      "Bcc": null,
+      "ReplyTo": null,
+      "Subject": "Lembrete: Projeto de Engenharia de Software II",
+      "Created": "2026-11-16T13:47:47.322-03:00",
+      "Username": "",
+      "Tags": [
+        "b881f3ad67"
+      ],
+      "Size": 1900,
+      "Attachments": 0,
+      "Snippet": "Olá, Ana Exemplo! A tarefa Projeto de Engenharia de Software II ainda está pendente. Prazo: 16/11/2026 às 15:47 (America/Sao_Paulo). Acessar a tarefa no Moodle Este lembrete convida você a retomar..."
+    }
+  ],
+  "limitations": [
+    "Docker Compose e Moodle institucional exigem validação no ambiente de destino.",
+    "Não existe atomicidade entre a aceitação SMTP e o commit SQLite."
+  ]
+}
