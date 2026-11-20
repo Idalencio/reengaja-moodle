@@ -76,6 +76,7 @@ O projeto também tem cinco cenários registrados na demonstração oficial do M
 - [Relatório técnico](entrega/Relatorio_Tecnico_Reengaja_Moodle.pdf)
 - [Apresentação](entrega/Apresentacao_Reengaja_Moodle.pdf)
 - [Roteiro da equipe](docs/roteiro_4_integrantes.md)
+- [Publicação do vídeo com os quatro integrantes](docs/publicacao_video.md)
 - [Requisitos](docs/requisitos.md)
 - [Relatórios individuais](docs/extensao_individual.md)
 - [Entrega no Moodle](docs/entrega.md)

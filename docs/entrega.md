@@ -10,6 +10,8 @@ Repositório: https://github.com/Idalencio/reengaja-moodle
 
 Os slides e o relatório técnico estão em `entrega/`. As falas estão em [roteiro_4_integrantes.md](roteiro_4_integrantes.md). Os textos individuais estão listados em [extensao_individual.md](extensao_individual.md).
 
+O MP4 final tem 6 minutos e 33 segundos, com as vozes dos quatro integrantes. O arquivo está no pacote de entrega.
+
 Depois de publicar o vídeo, registre o link em `EQUIPE.md` e confira se ele abre sem solicitar acesso. Cada integrante envia seu próprio relatório na entrega individual.
 
 As instruções de instalação estão no [README](../README.md). Os testes com Docker passaram em 19/11; o [registro da execução](https://github.com/Idalencio/reengaja-moodle/actions/runs/44545022348) permite conferir os resultados.

@@ -1,7 +1,13 @@
-# Fechamento da entrega
+# Situação da entrega
 
-Código, documentação, slides, relatório técnico e testes estão publicados. Os quatro textos individuais estão em `preparacao_extensao/`.
+O repositório público reúne os dois microsserviços, o guia de execução e os registros dos testes. Os oito slides e os quatro relatos individuais estão preparados.
 
-O link do vídeo no YouTube ainda precisa ser incluído em `EQUIPE.md`. Cada integrante deve ler seu relato antes do envio e conferir a parte que descreve sua participação.
+O vídeo `Apresentacao_Final_Reengaja_Moodle.mp4` tem 6 minutos e 33 segundos, em Full HD, com as vozes de Lucas Gallesio, Pedro Idalencio, Artur Thomé e Vitor Hugo. Ele apresenta a solução e os registros dos e-mails, da repetição e da recuperação de falha.
 
-Os testes de 19/11 passaram com Docker: 104 testes de unidade e componentes e nove cenários de integração. [Abrir execução](https://github.com/Idalencio/reengaja-moodle/actions/runs/44545022348).
+Para concluir o envio:
+
+1. Publicar o MP4 no YouTube e registrar o link em `EQUIPE.md`.
+2. Informar os links do GitHub e do YouTube na entrega do projeto no Moodle.
+3. Cada integrante conferir e enviar o próprio relatório individual de extensão.
+
+O título, a descrição e os capítulos do vídeo estão em [publicacao_video.md](publicacao_video.md).

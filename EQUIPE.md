@@ -13,7 +13,9 @@ Repositório: https://github.com/Idalencio/reengaja-moodle
 
 Apresentação e entrega: 20/11/2026.
 
-Vídeo no YouTube: link ainda não informado.
+Apresentação gravada pelos quatro integrantes: `Apresentacao_Final_Reengaja_Moodle.mp4`, com 6 minutos e 33 segundos.
+
+Vídeo no YouTube: registrar o link após a publicação.
 
 [Roteiro da apresentação](docs/roteiro_4_integrantes.md).
 
