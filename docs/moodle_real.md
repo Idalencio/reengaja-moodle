@@ -3,7 +3,7 @@
 ## Preparar o curso e as permissões
 
 Este procedimento deve ser feito por um administrador autorizado em uma instância de homologação.
-O pacote inclui testes com simulador e um ensaio complementar com Moodle 5.3 real da demonstração oficial. O protocolo está em teste_moodle_real.md. Credenciais de uma instalação institucional não foram fornecidas.
+O pacote inclui testes com simulador e um ensaio complementar com Moodle 5.3 real da demonstração oficial. O protocolo está em teste_moodle_real.md.
 
 1. Escolha uma disciplina com tarefas individuais, prazo único e sem prorrogações individuais.
    Confirme que todos os estudantes podem visualizar as tarefas e suas seções. Não use atividades em grupo,

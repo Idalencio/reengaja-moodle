@@ -1,30 +1,29 @@
-# Base para o relato individual - Vitor Hugo
+# Relatório individual de extensão - Vitor Hugo
 
 Engenharia de Software II - 2026/2
-Projeto: serviço de reengajamento de estudantes integrado ao Moodle.
 
-Este texto é uma base de revisão. A participação pessoal e o retorno do parceiro precisam ser acrescentados pelo integrante antes da entrega.
+Projeto: Reengaja Moodle.
 
-## Contexto da demanda
+Data: 19/11/2026.
 
-A demanda do projeto é apoiar o acompanhamento de tarefas pendentes no Moodle. O serviço propõe um contato preventivo por e-mail com estudantes que ainda não enviaram uma atividade que vence nas próximas 24 horas. O benefício esperado é facilitar o trabalho de acompanhamento, mantendo a atividade e o prazo no próprio Moodle.
+## Contexto do projeto
 
-## Minha participação
+O Reengaja Moodle propõe lembretes por e-mail para tarefas pendentes que vencem nas próximas 24 horas. A solução utiliza dois microsserviços, com uma fila entre a consulta das pendências e o envio das mensagens. Além de implementar esse fluxo, o trabalho precisa demonstrar os comportamentos definidos no enunciado e reunir registros que permitam conferir os resultados.
 
-[Registrar as atividades que você realizou, uma decisão em que participou e uma evidência concreta, como arquivo, teste, revisão ou demonstração.]
+## Minha participação e aprendizagens
 
-## Aprendizagens a relacionar com minha experiência
+O roteiro da apresentação reserva minha parte aos critérios de aceite, às evidências dos testes e à relação do projeto com seu uso. Meu foco neste relato é analisar o que cada verificação demonstra e por que a documentação precisa identificar o ambiente e a data da execução.
 
-A diferença entre teste de unidade, integração e execução em contêineres ficou clara na organização das evidências. Um teste aprovado em processo nativo não comprova a composição Docker. Registrar ambiente, data e resultado torna a avaliação do projeto verificável.
+Os testes de unidade e componentes verificam regras e partes do sistema. Os cenários de integração acompanham a comunicação entre a consulta, a fila, o processamento e o e-mail. Já a execução com Docker verifica se os serviços conseguem iniciar e funcionar na composição preparada para a demonstração. Cada etapa responde a uma questão diferente.
 
-[Explicar uma dificuldade que você encontrou e como a investigou. Ajustar o parágrafo anterior para refletir o que você de fato aprendeu.]
+Considero importante avaliar os resultados além da quantidade de testes. Os quatro critérios são enviar o lembrete na janela correta, ignorar entregas concluídas ou fora do prazo, bloquear um novo envio ao reprocessar uma solicitação concluída e registrar falhas com nova tentativa. A documentação relaciona esses critérios aos casos executados.
 
-## Relação com a prática extensionista
+## Resultados observados
 
-Uma solução tecnicamente correta precisa considerar a rotina e as condições de uso da instituição. Confirmar o curso, o remetente e as regras de acompanhamento faz parte dessa adequação. Os testes disponíveis comprovam comportamentos técnicos, mas não medem o efeito dos lembretes sobre aprendizagem ou participação.
+Em 19 de novembro, o GitHub Actions aprovou 104 testes de unidade e componentes e nove cenários de integração em contêineres. A verificação também confirmou os dois serviços prontos, os destinatários esperados e a persistência após reiniciar o consumidor. O projeto preserva ainda cinco cenários históricos na demonstração oficial do Moodle, identificados separadamente dos testes com origem simulada.
 
-[Acrescentar o contato e o retorno real do parceiro, com data e ajuste realizado. Se esse contato não aconteceu, registrar a limitação.]
+## Relação com a formação e a extensão
 
-## Reflexão final
+Para minha formação, o projeto destaca a importância de demonstrar uma afirmação com evidências. Um teste técnico aprovado mostra um comportamento do sistema, enquanto o efeito sobre a participação dos estudantes exige acompanhamento de uso. Essa distinção é relevante para a prática extensionista, porque permite apresentar o benefício esperado sem confundi-lo com um resultado educacional já medido. Os registros também facilitam a apresentação e a compreensão do trabalho por outras pessoas.
 
-[Relacionar uma aprendizagem do projeto com sua formação e indicar o que faria diferente em uma próxima experiência.]
+Código e documentação: https://github.com/Idalencio/reengaja-moodle

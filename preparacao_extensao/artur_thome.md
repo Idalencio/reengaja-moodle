@@ -1,30 +1,29 @@
-# Base para o relato individual - Artur Thomé
+# Relatório individual de extensão - Artur Thomé
 
 Engenharia de Software II - 2026/2
-Projeto: serviço de reengajamento de estudantes integrado ao Moodle.
 
-Este texto é uma base de revisão. A participação pessoal e o retorno do parceiro precisam ser acrescentados pelo integrante antes da entrega.
+Projeto: Reengaja Moodle.
 
-## Contexto da demanda
+Data: 19/11/2026.
 
-A demanda do projeto é apoiar o acompanhamento de tarefas pendentes no Moodle. O serviço propõe um contato preventivo por e-mail com estudantes que ainda não enviaram uma atividade que vence nas próximas 24 horas. O benefício esperado é facilitar o trabalho de acompanhamento, mantendo a atividade e o prazo no próprio Moodle.
+## Contexto do projeto
 
-## Minha participação
+O Reengaja Moodle envia um lembrete ao estudante que ainda não concluiu uma tarefa com vencimento nas próximas 24 horas. O acompanhamento consulta as pendências e publica as solicitações em uma fila. O serviço de notificações recebe essas mensagens, prepara o e-mail e registra o resultado. O objetivo é apoiar o acompanhamento das atividades com uma comunicação objetiva.
 
-[Registrar as atividades que você realizou, uma decisão em que participou e uma evidência concreta, como arquivo, teste, revisão ou demonstração.]
+## Minha participação e aprendizagens
 
-## Aprendizagens a relacionar com minha experiência
+No roteiro da equipe, minha parte reúne a explicação das notificações e da demonstração dos e-mails. Neste relato, concentro minha análise no que acontece depois que uma solicitação chega à fila: o envio, o registro do resultado e o tratamento das falhas.
 
-O processamento de mensagens mostra que receber o mesmo pedido duas vezes é uma situação normal em sistemas com filas. O histórico persistente ajuda a controlar esse caso. A falha entre o SMTP e o banco também deixa claro o limite de uma solução sem transação distribuída.
+Uma mensagem pode aparecer novamente durante o processamento. Por isso, cada lembrete usa uma identificação formada pelo curso, pela tarefa e pelo estudante. O histórico em SQLite permite reconhecer um envio já concluído e impedir outra mensagem para a mesma solicitação. Esse histórico precisa permanecer disponível após reiniciar o consumidor.
 
-[Explicar uma dificuldade que você encontrou e como a investigou. Ajustar o parágrafo anterior para refletir o que você de fato aprendeu.]
+Também considero importante prever a indisponibilidade do servidor de e-mail. Uma falha temporária é registrada e a solicitação aguarda uma nova tentativa, com limite de três no total. O SMTP e o banco realizam ações separadas: uma queda após a aceitação do e-mail e antes do registro local ainda pode causar uma repetição. Esse limite ajuda a compreender o alcance da solução.
 
-## Relação com a prática extensionista
+## Resultados observados
 
-Uma solução tecnicamente correta precisa considerar a rotina e as condições de uso da instituição. Confirmar o curso, o remetente e as regras de acompanhamento faz parte dessa adequação. Os testes disponíveis comprovam comportamentos técnicos, mas não medem o efeito dos lembretes sobre aprendizagem ou participação.
+Os testes de integração registram uma falha de conexão SMTP e o envio com sucesso na segunda tentativa após a recuperação. A execução com Docker de 19 de novembro confirmou a preservação do histórico após reiniciar o consumidor. Na mesma execução, passaram 104 testes de unidade e componentes e nove cenários de integração. O Mailpit permite conferir os e-mails usando contas fictícias.
 
-[Acrescentar o contato e o retorno real do parceiro, com data e ajuste realizado. Se esse contato não aconteceu, registrar a limitação.]
+## Relação com a formação e a extensão
 
-## Reflexão final
+Para minha formação, essa parte do projeto mostra que o envio de uma mensagem envolve mais do que montar seu conteúdo. É preciso registrar o resultado e decidir como agir diante de uma falha. No contexto educacional, esses cuidados ajudam a evitar contatos repetidos e a tornar o acompanhamento mais previsível. A prática extensionista aparece na relação entre essas decisões técnicas e a rotina de quem utiliza o serviço.
 
-[Relacionar uma aprendizagem do projeto com sua formação e indicar o que faria diferente em uma próxima experiência.]
+Código e documentação: https://github.com/Idalencio/reengaja-moodle

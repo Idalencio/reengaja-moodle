@@ -1,7 +1,7 @@
 # Requisitos e rastreabilidade
 
 Fonte de escopo: `projeto_2026_2.pdf`, fornecido pela disciplina Engenharia de Software II, 2026/2,
-professores José Pedro Schardosim Simão e Júlio Machado. A rubrica detalhada de avaliação não acompanha esse arquivo.
+professores José Pedro Schardosim Simão e Júlio Machado.
 
 | ID | Requisito | Implementação | Verificação |
 | --- | --- | --- | --- |
@@ -18,9 +18,9 @@ professores José Pedro Schardosim Simão e Júlio Machado. A rubrica detalhada 
 | R11 | Contas fictícias e Mailpit nos testes | Domínio reservado `example.test` e Mailpit sem relay | Integração SMTP e mensagens exportadas |
 | R12 | Código-fonte e guia de uso | Diretórios de serviços, README e guias | Pacote técnico |
 | R13 | Registro dos testes | JUnit, cobertura, JSON de integração, logs e EML | Diretórios `test-results` e `evidencias` |
-| R14 | Entrega por repositório público GitHub | Estrutura e workflow preparados | Publicação do repositório depende da equipe |
-| R15 | Apresentação e link YouTube | Vídeo técnico de apoio e roteiro | Publicação e apresentação pela equipe pendentes |
-| R16 | Relatório de extensão individual | Modelo orientado em `extensao_individual.md` | Autoria, experiências e contribuições precisam de revisão individual |
+| R14 | Repositório público GitHub | Fontes, guia e testes publicados | https://github.com/Idalencio/reengaja-moodle |
+| R15 | Apresentação e link YouTube | Slides e roteiro da equipe | Link do vídeo a incluir em EQUIPE.md |
+| R16 | Relatório de extensão individual | Quatro textos em `preparacao_extensao/` | Cada integrante confere e entrega o próprio texto |
 | R17 | Equipe com 2 a 4 pessoas | Ficha `EQUIPE.md` | Lucas Gallesio, Pedro Idalencio, Artur Thomé e Vitor Hugo |
 
 ## Critérios de aceite
@@ -32,4 +32,4 @@ professores José Pedro Schardosim Simão e Júlio Machado. A rubrica detalhada 
 | 3. Reprocessar concluída sem novo envio | I03: republicação; I04: reabertura do armazenamento; teste de concorrência |
 | 4. Registro de falha e nova tentativa | I05: conexão SMTP recusada registrada; I06: retorno por TTL e sucesso na segunda tentativa |
 
-Os critérios funcionais foram exercitados com o simulador e em um ensaio complementar com Moodle 5.3 real, registrado em evidencias/moodle_real_fluxo.json. O ambiente definitivo e o aceite devem ser confirmados com o parceiro.
+Os critérios funcionais foram exercitados com o simulador e em um ensaio complementar com Moodle 5.3 real, registrado em evidencias/moodle_real_fluxo.json. A configuração de outra instalação está descrita em `moodle_real.md`.

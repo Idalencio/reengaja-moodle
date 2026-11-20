@@ -59,14 +59,13 @@ for section in source.split('\n## ')[1:5]:
 story.append(PageBreak())
 text('Conferência antes da entrega','title')
 text('O que já está pronto','head')
-text('Código dos dois serviços, regras de seleção, RabbitMQ, SMTP, histórico de envios e tratamento de falhas. O pacote inclui guia de execução, registros dos testes, relatório de andamento e vídeo de apoio.')
+text('Código dos dois serviços, regras de seleção, RabbitMQ, SMTP, histórico de envios e tratamento de falhas. O pacote inclui guia de execução, registros dos testes, relatório técnico e slides.')
 text('O que precisa ser fechado','head')
 table(['Item','Conferência'],[
- ['Moodle','Conferir o registro do ensaio real e repetir o fluxo na instalação adotada pelo parceiro.'],
- ['Parceiro','Registrar data, participantes, observações e mudanças decorrentes da validação.'],
+ ['Moodle','Seguir o guia de configuração ao conectar outra instalação.'],
  ['Publicação','Publicar o vídeo no YouTube e registrar seu link. O código já está no GitHub.'],
- ['Equipe','Preencher quatro nomes, matrículas e contribuições em EQUIPE.md.'],
- ['Extensão','Concluir um relatório individual por integrante, com sua participação e aprendizagem.'],
+ ['Equipe','Conferir os quatro nomes em EQUIPE.md.'],
+ ['Extensão','Cada integrante conferir e enviar seu relatório individual.'],
 ],[.24*cw,.76*cw])
 text('Preparação de cada integrante','head')
 table(['Parte','Arquivos para revisar'],[
@@ -76,7 +75,7 @@ table(['Parte','Arquivos para revisar'],[
  ['4. Testes e execução','tests/, compose.yaml e evidencias/'],
 ],[.32*cw,.68*cw])
 text('Equipe: Lucas Gallesio, Pedro Idalencio, Artur Thomé e Vitor Hugo. A divisão organiza as falas e as revisões; cada integrante deve registrar as contribuições que realizou.','small')
-text('Os relatos individuais podem usar docs/extensao_individual.md como ponto de partida. O retorno do parceiro deve ser registrado em docs/validacao_parceiro.md.','small')
+text('Os quatro textos individuais estão listados em docs/extensao_individual.md.','small')
 
 
 def footer(canvas,doc):

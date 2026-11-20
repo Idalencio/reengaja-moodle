@@ -1,30 +1,29 @@
-# Base para o relato individual - Lucas Gallesio
+# Relatório individual de extensão - Lucas Gallesio
 
 Engenharia de Software II - 2026/2
-Projeto: serviço de reengajamento de estudantes integrado ao Moodle.
 
-Este texto é uma base de revisão. A participação pessoal e o retorno do parceiro precisam ser acrescentados pelo integrante antes da entrega.
+Projeto: Reengaja Moodle.
 
-## Contexto da demanda
+Data: 19/11/2026.
 
-A demanda do projeto é apoiar o acompanhamento de tarefas pendentes no Moodle. O serviço propõe um contato preventivo por e-mail com estudantes que ainda não enviaram uma atividade que vence nas próximas 24 horas. O benefício esperado é facilitar o trabalho de acompanhamento, mantendo a atividade e o prazo no próprio Moodle.
+## Contexto do projeto
 
-## Minha participação
+O Reengaja Moodle propõe um apoio ao acompanhamento das atividades escolares. O serviço envia um lembrete por e-mail ao estudante que ainda não entregou uma tarefa com vencimento nas próximas 24 horas. A mensagem apresenta a atividade, o prazo e o link de acesso. A intenção é facilitar a organização das pendências e reduzir a necessidade de contatos manuais.
 
-[Registrar as atividades que você realizou, uma decisão em que participou e uma evidência concreta, como arquivo, teste, revisão ou demonstração.]
+## Minha participação e aprendizagens
 
-## Aprendizagens a relacionar com minha experiência
+O roteiro da equipe relaciona minha parte à apresentação da proposta e do escopo. Meu foco neste relato é explicar o problema que o serviço procura resolver e como as regras de acompanhamento se relacionam com a rotina de professores e estudantes.
 
-A separação das responsabilidades ajuda a compreender a diferença entre consultar o sistema e executar uma ação a partir do resultado. Também mostra por que uma API pode responder corretamente e, ainda assim, o fluxo completo depender da fila, do SMTP e das permissões da instalação.
+Um ponto que considero importante é a definição dos limites do projeto. A solução acompanha uma disciplina, com tarefas individuais visíveis para toda a turma e um prazo comum. Atividades em grupo e prorrogações individuais ficam fora desse recorte. Essas escolhas ajudam a definir o comportamento esperado e a conferir os resultados.
 
-[Explicar uma dificuldade que você encontrou e como a investigou. Ajustar o parágrafo anterior para refletir o que você de fato aprendeu.]
+A mensagem também precisa ser objetiva. Informar somente que existe uma pendência seria pouco útil. O nome da atividade, a data de entrega e o link permitem que o estudante saiba o que precisa fazer e onde acessar a tarefa. Esse cuidado relaciona os requisitos técnicos à utilidade do serviço.
 
-## Relação com a prática extensionista
+## Resultados observados
 
-Uma solução tecnicamente correta precisa considerar a rotina e as condições de uso da instituição. Confirmar o curso, o remetente e as regras de acompanhamento faz parte dessa adequação. Os testes disponíveis comprovam comportamentos técnicos, mas não medem o efeito dos lembretes sobre aprendizagem ou participação.
+Os registros de 19 de novembro mostram 104 testes de unidade e componentes e nove cenários de integração aprovados. A execução com Docker também confirmou o envio para Ana e Carla, a ausência de envio para Bruno e o bloqueio de novas mensagens ao reprocessar solicitações concluídas. Os testes usam contas fictícias e e-mails capturados no Mailpit.
 
-[Acrescentar o contato e o retorno real do parceiro, com data e ajuste realizado. Se esse contato não aconteceu, registrar a limitação.]
+## Relação com a formação e a extensão
 
-## Reflexão final
+Vejo a relação com a prática extensionista na aplicação dos conteúdos da disciplina a uma necessidade do ambiente educacional. O benefício esperado é apoiar o acompanhamento das tarefas. Os resultados técnicos mostram o funcionamento do serviço, enquanto uma mudança na participação dos estudantes precisaria de acompanhamento real. Para minha formação, o projeto reforça a importância de compreender a necessidade atendida antes de ampliar as funcionalidades.
 
-[Relacionar uma aprendizagem do projeto com sua formação e indicar o que faria diferente em uma próxima experiência.]
+Código e documentação: https://github.com/Idalencio/reengaja-moodle

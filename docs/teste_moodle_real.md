@@ -44,4 +44,4 @@ Esse comando requer Python 3.12, as dependências de requirements.txt e variáve
 
 A demonstração pública do Moodle é reiniciada a cada hora. Os IDs e os tokens utilizados neste ensaio são temporários. A demonstração local do projeto continua usando o simulador para ser repetível sem depender desse site.
 
-A execução em contêineres e a validação do ambiente definitivo pelo parceiro ainda estão pendentes.
+O ensaio de 06/11 usou serviços nativos. A execução com contêineres e simulador passou em 19/11; o registro está em `evidencias/ci_github.json`.

@@ -1,27 +1,19 @@
-REENGAJAMENTO DE ESTUDANTES - ENTREGA DE 20/11/2026
+REENGAJA MOODLE
+Engenharia de Software II - 2026/2
+Lucas Gallesio, Pedro Idalencio, Artur Thomé e Vitor Hugo.
 
-Equipe: Lucas Gallesio, Pedro Idalencio, Artur Thomé e Vitor Hugo.
+COMO EXECUTAR
+1. Inicie o Docker Desktop com contêineres Linux.
+2. Abra INICIAR_DEMO.bat.
+3. Acesse http://localhost:8025 e confira os e-mails de Ana e Carla.
+4. Use TESTAR.bat para executar os testes e PARAR.bat para encerrar.
 
-1. Leia o relatório técnico em entrega/.
-2. O README.md explica a instalação e os comandos.
-3. A apresentação editável e o vídeo de apoio estão em entrega/.
-4. As falas e perguntas para os quatro integrantes estão em docs/roteiro_4_integrantes.md.
-5. docs/conferencia_final.md relaciona cada pedido do professor à respectiva evidência.
+O README.md contém os comandos e explica a configuração.
+Os slides e o relatório técnico estão em entrega/.
+O roteiro está em docs/roteiro_4_integrantes.md.
+Os relatos individuais estão em preparacao_extensao/.
 
-PARA EXECUTAR
-Inicie o Docker Desktop, execute INICIAR_DEMO.bat e abra http://localhost:8025.
-Execute TESTAR.bat para a suíte automatizada.
+Código: https://github.com/Idalencio/reengaja-moodle
+Testes de 19/11: https://github.com/Idalencio/reengaja-moodle/actions/runs/44545022348
 
-SITUAÇÃO EM 19/11
-104 testes de unidade/componentes e 9 cenários de integração passaram novamente.
-O ensaio real do Moodle de 06/11 foi preservado e tem 5 cenários aprovados.
-Os serviços rodaram separadamente com RabbitMQ e Mailpit reais, em execução nativa.
-Docker aprovado em 19/11: dois serviços prontos, envio correto e histórico preservado após reinício.
-Os 104 testes passaram novamente em 19/11, com 94% de cobertura.
-Repositório público: https://github.com/Idalencio/reengaja-moodle
-Execução Docker aprovada: https://github.com/Idalencio/reengaja-moodle/actions/runs/44545022348
-
-ANTES DE SUBMETER
-Publique o vídeo no YouTube e registre o link em EQUIPE.md.
-Registre o retorno real do parceiro e complete os relatos individuais.
-As bases dos relatos estão em preparacao_extensao/ e precisam da participação de cada pessoa.
+A entrega tem o link do repositório, o link do vídeo no YouTube e um relatório de extensão por integrante. O link do vídeo deve ser incluído em EQUIPE.md após a publicação.

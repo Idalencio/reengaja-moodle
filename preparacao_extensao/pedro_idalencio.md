@@ -1,30 +1,29 @@
-# Base para o relato individual - Pedro Idalencio
+# Relatório individual de extensão - Pedro Idalencio
 
 Engenharia de Software II - 2026/2
-Projeto: serviço de reengajamento de estudantes integrado ao Moodle.
 
-Este texto é uma base de revisão. A participação pessoal e o retorno do parceiro precisam ser acrescentados pelo integrante antes da entrega.
+Projeto: Reengaja Moodle.
 
-## Contexto da demanda
+Data: 19/11/2026.
 
-A demanda do projeto é apoiar o acompanhamento de tarefas pendentes no Moodle. O serviço propõe um contato preventivo por e-mail com estudantes que ainda não enviaram uma atividade que vence nas próximas 24 horas. O benefício esperado é facilitar o trabalho de acompanhamento, mantendo a atividade e o prazo no próprio Moodle.
+## Contexto do projeto
 
-## Minha participação
+O Reengaja Moodle foi organizado para enviar lembretes a estudantes com tarefas pendentes próximas do prazo. A solução consulta o Moodle, identifica atividades que vencem nas próximas 24 horas e encaminha as solicitações de e-mail para outro serviço. O projeto relaciona integração de sistemas, microsserviços e comunicação por filas a uma necessidade de acompanhamento educacional.
 
-[Registrar as atividades que você realizou, uma decisão em que participou e uma evidência concreta, como arquivo, teste, revisão ou demonstração.]
+## Minha participação e aprendizagens
 
-## Aprendizagens a relacionar com minha experiência
+Minha participação se concentrou no acompanhamento do desenvolvimento e na organização da entrega. Procurei conferir a integração com o Moodle e a adequação aos requisitos do professor. Também criei o repositório público e encaminhei a organização dos materiais. No roteiro da equipe, minha parte aborda a integração e a seleção dos estudantes que recebem o lembrete.
 
-A seleção de pendências evidencia a importância das regras de negócio. O limite de 24 horas, o rascunho e a tentativa mais recente mudam quem recebe o lembrete. Os casos de borda precisam ter resultados esperados definidos antes da demonstração.
+O ponto central dessa parte é transformar os dados consultados em uma decisão correta. O acompanhamento precisa considerar tarefas, matrículas e entregas. Uma atividade já enviada dispensa o lembrete, mas um rascunho permanece pendente. A janela inclui o limite de 24 horas e exclui o instante do vencimento.
 
-[Explicar uma dificuldade que você encontrou e como a investigou. Ajustar o parágrafo anterior para refletir o que você de fato aprendeu.]
+A API REST e a fila cumprem funções diferentes. A consulta ao Moodle espera uma resposta. Depois, a solicitação é publicada no RabbitMQ para que o serviço de notificações faça o processamento. Essa separação ajuda a compreender como cada serviço assume uma responsabilidade sem depender de uma execução única.
 
-## Relação com a prática extensionista
+## Resultados observados
 
-Uma solução tecnicamente correta precisa considerar a rotina e as condições de uso da instituição. Confirmar o curso, o remetente e as regras de acompanhamento faz parte dessa adequação. Os testes disponíveis comprovam comportamentos técnicos, mas não medem o efeito dos lembretes sobre aprendizagem ou participação.
+A execução de 19 de novembro aprovou os serviços com Docker, 104 testes de unidade e componentes e nove cenários de integração. Os registros conferem a seleção dos destinatários, as repetições e a recuperação de falhas. O repositório reúne o código, as instruções de uso e as evidências desses resultados.
 
-[Acrescentar o contato e o retorno real do parceiro, com data e ajuste realizado. Se esse contato não aconteceu, registrar a limitação.]
+## Relação com a formação e a extensão
 
-## Reflexão final
+Para minha formação, a organização do projeto destaca a importância de conferir os requisitos e apresentar evidências do que foi desenvolvido. Na prática extensionista, a integração só tem sentido quando atende a uma necessidade de uso. Neste caso, o lembrete procura apoiar a organização das tarefas e o acompanhamento do professor. A experiência também mostra como uma decisão aparentemente pequena, como diferenciar rascunho de entrega final, altera quem recebe a mensagem.
 
-[Relacionar uma aprendizagem do projeto com sua formação e indicar o que faria diferente em uma próxima experiência.]
+Código e documentação: https://github.com/Idalencio/reengaja-moodle

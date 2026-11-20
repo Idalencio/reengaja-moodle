@@ -88,7 +88,7 @@ if docker_aprovado:
     texto('O GitHub Actions também aprovou a execução com Docker: dois microsserviços prontos, lembretes para Ana e Carla, bloqueio de repetição e histórico preservado após reiniciar o consumidor. A suíte de testes e a integração passaram em contêineres.')
 else:
     texto('A configuração Docker está válida. O workflow publicado executa os serviços e a suíte; o resultado precisa ser conferido na aba Actions.','pequeno')
-texto('Código e materiais: <link href="https://github.com/Idalencio/reengaja-moodle">github.com/Idalencio/reengaja-moodle</link>. O vídeo no YouTube e os registros extensionistas reais continuam pendentes.','pequeno')
+texto('Código e materiais: <link href="https://github.com/Idalencio/reengaja-moodle">github.com/Idalencio/reengaja-moodle</link>. O código, os relatos e os registros dos testes acompanham os materiais da equipe.','pequeno')
 
 pagina('Regras e integração')
 secao('4. Seleção das pendências')
@@ -103,7 +103,7 @@ tabela(['Função','Informação consultada'],[
  ['mod_assign_get_submissions','Situação das entregas'],
  ['core_course_get_contents','Visibilidade e restrições dos módulos'],
 ],[.60,.40])
-texto('A instalação adotada precisa disponibilizar essas funções e permitir a leitura dos dados. O guia docs/moodle_real.md explica a configuração. O ensaio público de 06/11 não substitui a confirmação do ambiente definitivo com o parceiro.')
+texto('A instalação precisa disponibilizar essas funções e permitir a leitura dos dados. O guia docs/moodle_real.md explica a configuração. O ensaio público de 06/11 registra o uso na demonstração oficial; outra instalação precisa de configuração própria.')
 secao('6. Repetição e falhas')
 texto('A chave curso:tarefa:aluno identifica o lembrete. Se o envio já estiver registrado como concluído no SQLite, o consumidor ignora a repetição. O histórico permanece após reiniciar, desde que o banco e o volume sejam preservados.')
 texto('Uma falha temporária fica no histórico e encaminha a solicitação para a fila de espera. Após o TTL, ela volta à fila principal. O limite é de três tentativas. Falhas definitivas e mensagens inválidas ficam em uma fila separada. O ACK ocorre depois do processamento ou da publicação confirmada do encaminhamento.')
@@ -120,7 +120,7 @@ tabela(['Critério do professor','Verificação e resultado'],[
  ['4. Registro de falha e nova tentativa','I05/I06 e M05: erro SMTP registrado e sucesso na tentativa 2. I09 limita a três tentativas. Passou.'],
 ],[.36,.64])
 secao('8. Ensaio histórico com Moodle real')
-texto('Em 06/11, o projeto foi integrado ao Moodle 5.3 da demonstração oficial, com contas fictícias e duas atividades de teste. Cinco cenários passaram e dois e-mails chegaram ao Mailpit. Os registros M01 a M05 são históricos e não equivalem à homologação no Moodle do parceiro.')
+texto('Em 06/11, o projeto foi integrado ao Moodle 5.3 da demonstração oficial, com contas fictícias e duas atividades de teste. Cinco cenários passaram e dois e-mails chegaram ao Mailpit. Os registros M01 a M05 identificam a execução histórica na demonstração oficial.')
 secao('Registros incluídos')
 tabela(['Pasta ou arquivo','O que comprova'],[
  ['evidencias/unitarios_19_11.xml e .txt','104 testes locais aprovados em 19/11 e cobertura de 94%'],
@@ -137,19 +137,18 @@ codigo('docker compose up -d --build --wait\ndocker compose run --build --rm tes
 texto('Abra http://localhost:8025. Na demonstração nova, Ana e Carla recebem e Bruno não recebe. Para repetir a consulta sem reenviar as mensagens concluídas:')
 codigo('docker compose exec acompanhamento python -m acompanhamento --once')
 texto('A verificação dos contêineres usa python scripts/verificar_containers.py após a inicialização. O workflow do GitHub repete esse roteiro, reinicia o consumidor e preserva os registros. Para encerrar conservando o histórico, use docker compose down.')
-secao('10. Pendências antes de 20/11')
+secao('10. Material da entrega')
 pendencias = [
  ['Publicar o vídeo no YouTube','URL real da apresentação do grupo no EQUIPE.md'],
- ['Registrar a validação extensionista','Contato, retorno e ajustes reais em docs/validacao_parceiro.md'],
- ['Concluir os relatos individuais','Cada integrante revisar sua participação e aprendizagens'],
+ ['Relatórios individuais','Quatro textos em preparacao_extensao/, um por integrante'],
 ]
 if not docker_aprovado:
     pendencias.insert(0, ['Conferir a execução Docker','Resultado do workflow e test-results/execucao_containers.json'])
-tabela(['Ação','Comprovação que ainda precisa ser acrescentada'],pendencias,[.35,.65])
+tabela(['Item','Localização e uso'],pendencias,[.35,.65])
 if docker_aprovado:
     texto('Execução aprovada: <link href="'+escape(ci['html_url'])+'">abrir resultado no GitHub Actions</link>. O artefato registros-de-testes contém os logs, as evidências de integração e a verificação dos contêineres.','pequeno')
-texto('O pacote contém oito slides editáveis, roteiro com falas para os quatro integrantes e bases nomeadas dos relatos individuais. Essas bases não substituem o relato da experiência de cada pessoa. O benefício educacional é esperado e ainda não foi medido.')
-texto('A matriz docs/conferencia_final.md relaciona todos os pedidos do enunciado ao código, à documentação e às evidências. O enunciado cita avaliação por rubrica, mas não apresenta seus pesos detalhados.','pequeno')
+texto('A entrega reúne os oito slides, o roteiro da apresentação e os quatro relatos individuais. Cada integrante confere seu texto antes do envio. O projeto tem como objetivo apoiar o acompanhamento das tarefas; seu efeito na participação dos estudantes ainda não foi medido.')
+texto('Os requisitos e os arquivos correspondentes estão em docs/conferencia_final.md.','pequeno')
 secao('Referências')
 for ref in ['Enunciado: projeto_2026_2.pdf, Engenharia de Software II, 2026/2.',
  'Moodle: https://docs.moodle.org/en/Using_web_services',

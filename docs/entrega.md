@@ -1,30 +1,17 @@
-# Entrega de 20/11/2026
+# Entrega no Moodle
 
-O parceiro deve receber um repositório público com código, guia e registros dos testes. O enunciado também pede o link YouTube do vídeo de apresentação e o relato de extensão de cada integrante.
+A entrega do projeto reúne:
 
-## Publicação do código
+1. O link deste repositório público, com código, guia de uso e registros dos testes.
+2. O link do vídeo da apresentação no YouTube.
+3. Um relatório individual de extensão de cada integrante.
 
-O código está publicado em https://github.com/Idalencio/reengaja-moodle. Para obter uma cópia:
+Repositório: https://github.com/Idalencio/reengaja-moodle
 
-```sh
-git clone https://github.com/Idalencio/reengaja-moodle.git
-cd reengaja-moodle
-```
+Os slides e o relatório técnico estão em `entrega/`. As falas estão em [roteiro_4_integrantes.md](roteiro_4_integrantes.md). Os textos individuais estão listados em [extensao_individual.md](extensao_individual.md).
 
-O workflow executa a composição, verifica os dois serviços e roda os testes. Depois da execução, os registros ficam no artefato registros-de-testes do GitHub Actions. O script não cria uma evidência de sucesso antes de concluir as verificações.
+Depois de publicar o vídeo, registre o link em `EQUIPE.md` e confira se ele abre sem solicitar acesso. Cada integrante envia seu próprio relatório na entrega individual.
 
-Verifique o repositório em uma janela sem login e registre a URL em EQUIPE.md. O .env real, tokens e bancos operacionais ficam fora do Git. O arquivo .env.example contém apenas os valores fictícios da demonstração.
+As instruções de instalação estão no [README](../README.md). Os testes com Docker passaram em 19/11; o [registro da execução](https://github.com/Idalencio/reengaja-moodle/actions/runs/44545022348) permite conferir os resultados.
 
-## Publicação do vídeo
-
-Os slides e o roteiro estão em entrega/ e docs/roteiro_4_integrantes.md. O vídeo de apoio do pacote original resume o sistema e as evidências; arquivos MP4 ficam fora do Git. A equipe deve revisar ou gravar a apresentação, enviar ao YouTube e testar o acesso ao link. O texto para título e descrição está em docs/publicacao_video.md.
-
-## Conferência da submissão
-
-1. Conferir os links públicos do repositório e do vídeo.
-2. Conferir os quatro nomes e a execução Docker.
-3. Acrescentar o retorno real do parceiro e os ajustes realizados.
-4. Cada pessoa revisar e concluir o próprio relato de extensão.
-5. Conferir eventuais instruções adicionais no ambiente da disciplina.
-
-A matriz docs/conferencia_final.md informa o que já está comprovado e o que permanece pendente.
+O arquivo `.env` real, as senhas e os bancos de uso não devem entrar no repositório. O `.env.example` contém apenas a configuração fictícia da demonstração.

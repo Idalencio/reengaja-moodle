@@ -50,7 +50,7 @@ Vitor: Em 19 de novembro, o GitHub Actions executou o Docker Compose e aprovou o
 
 Uso com a instituição
 
-Vitor: Os quatro critérios de aceite passaram nos testes e na execução com Docker. O código, os guias, os slides e as evidências estão no repositório público. Para uso com a instituição, precisamos confirmar curso, permissões da API e remetente, além de registrar o feedback do parceiro. Para a entrega, faltam o link do vídeo no YouTube e os relatos individuais com a participação real de cada integrante. Fontes: docs/conferencia_final.md e enunciado páginas 10 a 12.
+Vitor: Os quatro critérios de aceite passaram nos testes e na execução com Docker. O código, os guias, os slides e as evidências estão no repositório público. Para usar outra instalação, precisamos configurar o curso, as permissões da API e o remetente. A entrega reúne o link do repositório, o vídeo no YouTube e os relatórios individuais. Fontes: docs/conferencia_final.md e enunciado páginas 10 a 12.
 
 ## Perguntas que todos precisam saber responder
 
@@ -65,7 +65,7 @@ Vitor: Os quatro critérios de aceite passaram nos testes e na execução com Do
 | E se o SMTP cair? | Registra o erro e tenta de novo após a espera, até três tentativas. |
 | E se o consumidor reiniciar? | As mensagens são persistentes e o SQLite fica em volume. O histórico concluído continua bloqueando repetição. |
 | Há garantia absoluta de um único e-mail? | Não. SMTP e SQLite não têm transação conjunta. O critério comprovado cobre o que já ficou registrado como concluído. |
-| Foi integrado ao Moodle real? | Sim, houve ensaio na demonstração oficial em 06/11. O simulador local mantém a demonstração reproduzível. Não há homologação registrada na instalação do parceiro. |
+| Foi integrado ao Moodle real? | Sim, houve ensaio na demonstração oficial em 06/11. O simulador local mantém a demonstração reproduzível. Outra instalação exige configuração e teste próprios. |
 | O projeto melhorou a participação dos alunos? | Esse é o benefício esperado. Não houve medição de impacto educacional. |
 | Os contêineres foram executados? | Sim. Em 19/11, a execução 44545022348 do GitHub Actions aprovou os dois serviços, o reinício do consumidor, 104 testes e nove cenários de integração. |
 

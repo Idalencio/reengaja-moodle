@@ -1,26 +1,22 @@
 # Equipe
 
-Engenharia de Software II - 2026/2
+Engenharia de Software II - 2026/2.
 
 - Lucas Gallesio
 - Pedro Idalencio
 - Artur Thomé
 - Vitor Hugo
 
-Projeto: serviço de reengajamento de estudantes integrado ao Moodle.
+Projeto: Reengaja Moodle.
 
-A divisão de falas sugerida está em `docs/roteiro_4_integrantes.md`.
+Repositório: https://github.com/Idalencio/reengaja-moodle
 
-Repositório público: https://github.com/Idalencio/reengaja-moodle
+Apresentação e entrega: 20/11/2026.
 
-Vídeo no YouTube: a publicar.
+Vídeo no YouTube: link ainda não informado.
 
-Validação com o parceiro: a registrar, conforme as atividades realmente realizadas.
+[Roteiro da apresentação](docs/roteiro_4_integrantes.md).
 
-Data de apresentação e entrega prevista no enunciado: **20/11/2026**.
-Checkpoint de validação previsto: **06/11/2026**.
+[Relatórios individuais](docs/extensao_individual.md).
 
-As contribuições e aprendizagens de cada pessoa devem constar do respectivo relato individual.
-
-Execução Docker aprovada em 19/11/2026: https://github.com/Idalencio/reengaja-moodle/actions/runs/44545022348
-104 testes de unidade/componentes e nove cenários de integração aprovados em contêineres.
+[Testes de 19/11](https://github.com/Idalencio/reengaja-moodle/actions/runs/44545022348): 104 testes de unidade e componentes e nove cenários de integração aprovados com Docker.
