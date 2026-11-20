@@ -15,7 +15,7 @@ Apresentação e entrega: 20/11/2026.
 
 Apresentação gravada pelos quatro integrantes: `Apresentacao_Final_Reengaja_Moodle.mp4`, com 6 minutos e 33 segundos.
 
-Vídeo no YouTube: registrar o link após a publicação.
+Vídeo no YouTube: https://youtu.be/aXw6Iu1j9lQ
 
 [Roteiro da apresentação](docs/roteiro_4_integrantes.md).
 

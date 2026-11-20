@@ -8,6 +8,8 @@ Trabalho de Engenharia de Software II, 2026/2.
 
 O projeto envia um lembrete por e-mail para quem ainda não entregou uma tarefa do Moodle que vence nas próximas 24 horas. O e-mail contém o nome da atividade, o prazo e o link de acesso.
 
+Vídeo da apresentação: [assistir no YouTube](https://youtu.be/aXw6Iu1j9lQ).
+
 ## Como executar
 
 É necessário ter o Docker Desktop iniciado, com contêineres Linux e Docker Compose v2. Na primeira execução, as imagens são baixadas da internet.

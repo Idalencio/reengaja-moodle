@@ -1,4 +1,6 @@
-# Publicação da apresentação
+# Vídeo da apresentação
+
+Link informado pela equipe: https://youtu.be/aXw6Iu1j9lQ
 
 ## Arquivo
 
@@ -35,4 +37,6 @@ https://github.com/Idalencio/reengaja-moodle
 
 ## Link da entrega
 
-Depois de publicar, conferir se o link abre para quem vai avaliar e registrá-lo em `EQUIPE.md`. A entrega no Moodle reúne esse link, o endereço do GitHub e os relatórios individuais.
+Vídeo: https://youtu.be/aXw6Iu1j9lQ
+
+A entrega no Moodle reúne esse link, o endereço do GitHub e os relatórios individuais. O link também está registrado em `EQUIPE.md`.

@@ -16,7 +16,7 @@ Referência: projeto_2026_2.pdf, Engenharia de Software II, 2026/2, páginas 4 a
 | Código, guia e registros dos testes | README, fontes e `evidencias/` |
 | Apresentação | Slides em `entrega/` e roteiro em `docs/` |
 | Apresentação gravada | MP4 de 6 min 33 s com as vozes dos quatro integrantes e registros dos testes |
-| Vídeo no YouTube | Publicar o MP4 e incluir o link em `EQUIPE.md` |
+| Vídeo no YouTube | [Apresentação dos quatro integrantes](https://youtu.be/aXw6Iu1j9lQ) |
 | Relatório individual de extensão | Um texto por integrante em `preparacao_extensao/` |
 
 [Execução de 19/11](https://github.com/Idalencio/reengaja-moodle/actions/runs/44545022348).

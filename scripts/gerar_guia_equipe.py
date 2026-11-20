@@ -63,7 +63,7 @@ text('Código dos dois serviços, regras de seleção, RabbitMQ, SMTP, históric
 text('O que precisa ser fechado','head')
 table(['Item','Conferência'],[
  ['Moodle','Seguir o guia de configuração ao conectar outra instalação.'],
- ['Publicação','Publicar o vídeo no YouTube e registrar seu link. O código já está no GitHub.'],
+ ['Vídeo','https://youtu.be/aXw6Iu1j9lQ. Incluir o link na entrega do projeto no Moodle.'],
  ['Equipe','Conferir os quatro nomes em EQUIPE.md.'],
  ['Extensão','Cada integrante conferir e enviar seu relatório individual.'],
 ],[.24*cw,.76*cw])

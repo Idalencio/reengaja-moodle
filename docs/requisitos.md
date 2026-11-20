@@ -19,7 +19,7 @@ professores José Pedro Schardosim Simão e Júlio Machado.
 | R12 | Código-fonte e guia de uso | Diretórios de serviços, README e guias | Pacote técnico |
 | R13 | Registro dos testes | JUnit, cobertura, JSON de integração, logs e EML | Diretórios `test-results` e `evidencias` |
 | R14 | Repositório público GitHub | Fontes, guia e testes publicados | https://github.com/Idalencio/reengaja-moodle |
-| R15 | Apresentação e link YouTube | Slides e roteiro da equipe | Link do vídeo a incluir em EQUIPE.md |
+| R15 | Apresentação e link YouTube | Slides e vídeo com os quatro integrantes | https://youtu.be/aXw6Iu1j9lQ |
 | R16 | Relatório de extensão individual | Quatro textos em `preparacao_extensao/` | Cada integrante confere e entrega o próprio texto |
 | R17 | Equipe com 2 a 4 pessoas | Ficha `EQUIPE.md` | Lucas Gallesio, Pedro Idalencio, Artur Thomé e Vitor Hugo |
 

@@ -47,5 +47,5 @@ O banco guarda uma chave por curso, tarefa e aluno. Se o envio já terminou e es
 **O que acontece se o e-mail falhar?**
 A falha é registrada e a mensagem volta para outra tentativa após o TTL. O limite é de três tentativas. Erros definitivos e mensagens inválidas vão para a fila de falhas.
 
-**O que falta?**
-Incluir o link do vídeo no YouTube em EQUIPE.md. Os relatos individuais estão em preparacao_extensao/. O repositório é público e os testes com Docker passaram em 19/11.
+**Entrega**
+Vídeo: https://youtu.be/aXw6Iu1j9lQ. Os relatos individuais estão em preparacao_extensao/. O repositório é público e os testes com Docker passaram em 19/11.

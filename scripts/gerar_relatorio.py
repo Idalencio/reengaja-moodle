@@ -22,7 +22,8 @@ suite = ET.parse(ROOT/'test-results/junit.xml').getroot().find('testsuite')
 ci_path = ROOT/'evidencias/ci_github.json'
 ci = json.loads(ci_path.read_text()) if ci_path.exists() else None
 docker_aprovado = bool(ci and ci.get('conclusion') == 'success')
-revisao = '19/11/2026'
+revisao = '20/11/2026'
+data_testes = datetime.fromisoformat(suite.attrib['timestamp']).strftime('%d/%m/%Y')
 assert int(suite.attrib['failures']) == int(suite.attrib['errors']) == evidencia['failed'] == real['failed'] == 0
 testes = int(suite.attrib['tests'])
 data = datetime.fromisoformat(evidencia['executed_at']).astimezone(ZoneInfo('America/Sao_Paulo'))
@@ -56,7 +57,7 @@ def pagina(valor):
 
 def tabela(cabecalho,linhas,proporcoes):
     celulas=[[Paragraph('<b>'+escape(v)+'</b>',estilos['celula']) for v in cabecalho]]
-    celulas += [[Paragraph(escape(str(v)),estilos['celula']) for v in linha] for linha in linhas]
+    celulas += [[v if isinstance(v,Paragraph) else Paragraph(escape(str(v)),estilos['celula']) for v in linha] for linha in linhas]
     t=Table(celulas,colWidths=[largura*p for p in proporcoes],repeatRows=1,hAlign='LEFT')
     t.setStyle(TableStyle([('VALIGN',(0,0),(-1,-1),'TOP'),('BACKGROUND',(0,0),(-1,0),colors.HexColor('#e8edf0')),
       ('LINEABOVE',(0,0),(-1,0),.6,colors.HexColor('#203b4b')),('LINEBELOW',(0,0),(-1,0),.5,colors.HexColor('#203b4b')),
@@ -83,7 +84,7 @@ tabela(['Componente','Responsabilidade'],[
 ],[.27,.73])
 texto('Os dois microsserviços têm processos e Dockerfiles próprios. A consulta acontece ao iniciar e se repete a cada hora. O intervalo é configurável para a demonstração.')
 secao('3. Situação da revisão')
-texto(f'Em {revisao}, passaram novamente {testes} testes de unidade/componentes. O registro de {data.strftime("%d/%m/%Y")} preserva nove cenários locais de integração. O ensaio histórico de 06/11 acrescenta cinco cenários no Moodle real da demonstração oficial.')
+texto(f'Em {data_testes}, passaram novamente {testes} testes de unidade/componentes. O registro de {data.strftime("%d/%m/%Y")} preserva nove cenários locais de integração. O ensaio histórico de 06/11 acrescenta cinco cenários no Moodle real da demonstração oficial.')
 if docker_aprovado:
     texto('O GitHub Actions também aprovou a execução com Docker: dois microsserviços prontos, lembretes para Ana e Carla, bloqueio de repetição e histórico preservado após reiniciar o consumidor. A suíte de testes e a integração passaram em contêineres.')
 else:
@@ -111,7 +112,7 @@ texto('Limite: SMTP e SQLite não compartilham uma transação. Uma queda entre 
 
 pagina('Critérios de aceite e evidências')
 secao('7. Resultados reproduzidos')
-texto(f'A suíte executada em {revisao} aprovou {testes} testes de unidade/componentes, sem falhas. A cobertura foi de {percentual}% das instruções medidas. O percentual exclui pontos de entrada, simulador e scripts. Os dois pontos de entrada também foram conferidos em processos separados.')
+texto(f'A suíte executada em {data_testes} aprovou {testes} testes de unidade/componentes, sem falhas. A cobertura foi de {percentual}% das instruções medidas. O percentual exclui pontos de entrada, simulador e scripts. Os dois pontos de entrada também foram conferidos em processos separados.')
 texto('Os nove cenários I01 a I09 usam Moodle simulado, RabbitMQ real e Mailpit real. Eles produziram três e-mails: dois envios iniciais e um após recuperação da falha. O reinício do consumidor manteve o total e bloqueou duas repetições.')
 tabela(['Critério do professor','Verificação e resultado'],[
  ['1. Lembrete na janela','I01/I02: Ana e Carla recebem. M01: a pendência real chega ao Mailpit. Passou.'],
@@ -139,7 +140,7 @@ codigo('docker compose exec acompanhamento python -m acompanhamento --once')
 texto('A verificação dos contêineres usa python scripts/verificar_containers.py após a inicialização. O workflow do GitHub repete esse roteiro, reinicia o consumidor e preserva os registros. Para encerrar conservando o histórico, use docker compose down.')
 secao('10. Material da entrega')
 pendencias = [
- ['Publicar o vídeo no YouTube','URL real da apresentação do grupo no EQUIPE.md'],
+ ['Vídeo da apresentação',Paragraph('<link href="https://youtu.be/aXw6Iu1j9lQ">https://youtu.be/aXw6Iu1j9lQ</link>',estilos['celula'])],
  ['Relatórios individuais','Quatro textos em preparacao_extensao/, um por integrante'],
 ]
 if not docker_aprovado:

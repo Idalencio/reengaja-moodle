@@ -16,4 +16,4 @@ Os relatos individuais estão em preparacao_extensao/.
 Código: https://github.com/Idalencio/reengaja-moodle
 Testes de 19/11: https://github.com/Idalencio/reengaja-moodle/actions/runs/44545022348
 
-A entrega tem o link do repositório, o link do vídeo no YouTube e um relatório de extensão por integrante. O link do vídeo deve ser incluído em EQUIPE.md após a publicação.
+A entrega tem o link do repositório, o link do vídeo no YouTube e um relatório de extensão por integrante. Vídeo da apresentação: https://youtu.be/aXw6Iu1j9lQ
